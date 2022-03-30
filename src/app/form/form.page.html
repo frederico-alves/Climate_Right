@@ -7,4 +7,278 @@
 <ion-content>
   <p>FORM WORKS</p>
   <ion-button routerLink="/home" routerDirection="forward">SUBMIT</ion-button>
+
+  <ion-list>
+
+    <ion-item>
+    <ion-label>Gender</ion-label>
+    <ion-select placeholder="Select One">
+    <ion-select-option value="f">Female</ion-select-option>
+    <ion-select-option value="m">Male</ion-select-option>
+    <ion-select-option value="n">Non-binary</ion-select-option>
+    </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Zone</ion-label>
+      <ion-select placeholder="Select One">
+      <ion-select-option value="1">Zone 1</ion-select-option>
+      <ion-select-option value="2">Zone 2</ion-select-option>
+      <ion-select-option value="3">Zone 3</ion-select-option>
+      <ion-select-option value="4">Zone 4</ion-select-option>
+      <ion-select-option value="5">Zone 5</ion-select-option>
+      <ion-select-option value="6">Zone 6</ion-select-option>
+      <ion-select-option value="7">Zone 7</ion-select-option>
+      <ion-select-option value="8">Zone 8</ion-select-option>
+      <ion-select-option value="9">Zone 9</ion-select-option>
+      <ion-select-option value="10">Zone 10</ion-select-option>
+      <ion-select-option value="11">Zone 11</ion-select-option>
+      <ion-select-option value="12">Zone 12</ion-select-option>
+      <ion-select-option value="13">Zone 13</ion-select-option>
+      <ion-select-option value="14">Zone 14</ion-select-option>
+      <ion-select-option value="15">Zone 15</ion-select-option>
+      <ion-select-option value="16">Zone 16</ion-select-option>
+      </ion-select>
+      </ion-item>
+    </ion-list>
+    
+      <!-- RADIO BARS -->
+      <section class="radio-bars">
+        <!-- It trigers user emotional response -->
+        <!-- <p class="question-title"">How are you feeling?</p> -->
+
+        <!-- SIGNIFIERS 1 HOT/COLD -->
+        <div class="space-between">
+          <h2 class="signifiers">How are you feeling?</h2>
+          
+        </div>
+        <!-- GROUP 1 HOT/COLD -->
+        <div> 
+          <ion-radio-group > 
+          <!--  <ion-radio-group [(ngModel)]='unit'> -->
+          <ion-grid>
+            <ion-row>
+              <ion-col class="ion-align-self-start">Very Cold</ion-col>
+              <ion-col></ion-col>
+              <ion-col >Very Hot</ion-col>
+            </ion-row>
+          <ion-row class="ion-padding"> 
+         <ion-col> <ion-radio value="1" > </ion-radio> </ion-col>
+         <ion-col> <ion-radio value="2" > </ion-radio> </ion-col>
+         <ion-col> <ion-radio value="3"> </ion-radio> </ion-col>
+         <ion-col> <ion-radio value="4"> </ion-radio> </ion-col>
+         <ion-col> <ion-radio value="5" > </ion-radio> </ion-col>
+         <ion-col> <ion-radio value="6" > </ion-radio> </ion-col>
+         <ion-col> <ion-icon (click) ="presentAlertSheet()"  size="large" name="information">  </ion-icon></ion-col>
+        </ion-row>
+        </ion-grid>
+      </ion-radio-group>
+
+      <ion-radio-group > 
+        <!--  <ion-radio-group [(ngModel)]='unit'> -->
+        <ion-grid>
+          <ion-row>
+            <ion-col class="ion-align-self-start">Very Tired</ion-col>
+            <ion-col></ion-col>
+            <ion-col >Very Energetic</ion-col>
+          </ion-row>
+        <ion-row class="ion-padding"> 
+       <ion-col> <ion-radio value="1" > </ion-radio> </ion-col>
+       <ion-col> <ion-radio value="2" > </ion-radio> </ion-col>
+       <ion-col> <ion-radio value="3"> </ion-radio> </ion-col>
+       <ion-col> <ion-radio value="4"> </ion-radio> </ion-col>
+       <ion-col> <ion-radio value="5" > </ion-radio> </ion-col>
+       <ion-col> <ion-radio value="6" > </ion-radio> </ion-col>
+       <ion-col> <ion-icon  size="large" name="information">  </ion-icon></ion-col>
+      </ion-row>
+      </ion-grid>
+    </ion-radio-group>
+    <ion-radio-group > 
+      <!--  <ion-radio-group [(ngModel)]='unit'> -->
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-align-self-start">Very Dry </ion-col>
+          <ion-col></ion-col>
+          <ion-col >Very Muggy</ion-col>
+        </ion-row>
+      <ion-row class="ion-padding"> 
+     <ion-col> <ion-radio value="1" > </ion-radio> </ion-col>
+     <ion-col> <ion-radio value="2" > </ion-radio> </ion-col>
+     <ion-col> <ion-radio value="3"> </ion-radio> </ion-col>
+     <ion-col> <ion-radio value="4"> </ion-radio> </ion-col>
+     <ion-col> <ion-radio value="5" > </ion-radio> </ion-col>
+     <ion-col> <ion-radio value="6" > </ion-radio> </ion-col>
+     <ion-col> <ion-icon  size="large" name="information">  </ion-icon></ion-col>
+    </ion-row>
+    </ion-grid>
+  </ion-radio-group>
+
+      
+      
+     
+        
+        </div>
+        <fieldset id="group1">
+        <div class='options'>
+        <label>
+          <input id="temperature1" type='radio' value="value1" name="group1">
+          <span class='clickable clickable--first'></span>
+
+        </label>
+        <label>
+          <input id="temperature2" type='radio' value="value2" name="group1">
+          <span class='clickable'></span>
+
+        </label>
+        <label>
+          <input id="temperature3" type='radio' value="value3" name="group1">
+            <span class='clickable'></span>
+
+        </label>
+        <label>
+          <input id="temperature4" type='radio' value="value2" name="group1">
+            <span class='clickable'></span>
+
+        </label>
+        <label>
+          <input id="temperature5" type='radio' value="value5" name="group1">
+            <span class='clickable'></span>
+
+        </label>
+        <label>
+          <input id="temperature6" type='radio' value="value6" name="group1">
+            <span class='clickable clickable--last'></span>
+
+        </label>
+        <!-- HELP-BUTTON 1 HOT/COLD -->
+        <span class="help--button">
+          <div class="help--button-clickable">
+              <span class="help--button-clickable-text">?</span>
+          </div>
+          <div class="help--button-container">
+            <div class="help--button-container-message">
+                <p>How do you feel the temperature in your zone right now?</p>
+                <br>
+                <p>Note: Temperature in this room can vary between 18.5°C and 21.5°C.</p>
+            </div>
+          </div>
+        </span>
+      </div>
+      </fieldset> <!-- GROUP 1 HOT/COLD -->
+
+      <!-- SIGNIFIERS 2 MUGGY/DRY -->
+      <div class="space-between">
+        <h2 class="signifiers">VERY ENERGETIC</h2>
+        <h2 class="signifiers">VERY TIRED</h2>
+      </div>
+      <!-- GROUP 2 MUGGY/DRY -->
+      <fieldset id="group2">
+        <div class='options'>
+          <label>
+            <input type='radio' value="value2" name="group2">
+              <span class='clickable clickable--first'></span>
+
+          </label>
+          <label>
+            <input type='radio' value="value2" name="group2">
+              <span class='clickable'></span>
+
+          </label>
+          <label>
+            <input type='radio' value="value9" name="group2">
+              <span class='clickable'></span>
+
+          </label>
+          <label>
+            <input type='radio' value="value10" name="group2">
+              <span class='clickable'></span>
+
+          </label>
+          <label>
+            <input type='radio' value="value11" name="group2">
+              <span class='clickable'></span>
+
+          </label>
+          <label>
+            <input type='radio' value="value12" name="group2">
+              <span class='clickable clickable--last'></span>
+
+          </label>
+          <!-- HELP-BUTTON 2 MUGGY/DRY -->
+          <span class="help--button">
+            <div class="help--button-clickable">
+              <span class="help--button-clickable-text">?</span>
+            </div>
+            <div class="help--button-container">
+              <div class="help--button-container-message">
+                <p>How do you feel the polution level in your zone right now?</p>
+                <br>
+                <p>Very tired: the polution is high, you feel sleepy, tired.</p>
+                <p>Very energetic: the polution is low, you feel fresh and full of energy.</p>
+                <br>
+                <p>To give a good evaluation, lack of sleep or excessive physical activities should not be counted as factors of tiredness.</p>
+              </div>
+            </div>
+          </span>
+        </div>
+      </fieldset><!-- GROUP 2 MUGGY/DRY -->
+
+
+      <!-- SIGNIFIERS 3 MUGGY/DRY -->
+      <div class="space-between">
+        <h2 class="signifiers">VERY MUGGY</h2>
+        <h2 class="signifiers">VERY DRY</h2>
+      </div>
+      <!-- GROUP 3 MUGGY/DRY -->
+      <fieldset id="group3">
+        <div class='options'>
+          <label>
+            <input type='radio' value="value13" name="group3"><span class='clickable clickable--first'></span>
+
+          </label>
+          <label>
+            <input type='radio' value="value12" name="group3">
+              <span class='clickable'></span>
+
+          </label>
+          <label>
+            <input type='radio' value="value15" name="group3">
+              <span class='clickable'></span>
+
+          </label>
+          <label>
+            <input type='radio' value="value16" name="group3">
+              <span class='clickable'></span>
+
+          </label>
+          <label>
+            <input type='radio' value="value12" name="group3">
+              <span class='clickable'></span>
+
+          </label>
+          <label>
+            <input type='radio' value="value12" name="group3">
+              <span class='clickable clickable--last'></span>
+
+          </label>
+          <!-- HELP-BUTTON 3 MUGGY/DRY -->
+          <span class="help--button">
+            <div class="help--button-clickable">
+                <span class="help--button-clickable-text">?</span>
+            </div>
+            <div class="help--button-container">
+              <div class="help--button-container-message">
+                <p>How do you feel the humidity in your zone right now?</p>
+                <br>
+                <p>Very dry: you feel your throat is dry.</p>
+                <p>Very muggy: clammy skin.</p>
+                <br>
+                <p>Note: Humidity in this room can vary between 60% and 20%.</p>
+              </div>
+            </div>
+          </span>
+      </div>
+      </fieldset><!-- GROUP 3 MUGGY/DRY -->
+
+      </section>
+
 </ion-content>
