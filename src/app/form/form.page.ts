@@ -18,7 +18,6 @@ constructor( private actionSheetCtrl: ActionSheetController,
   ngOnInit() {
   }
 
-
  /* async presentActionSheet(){
     const actionSheet = await this.actionSheetCtrl.create({
     
