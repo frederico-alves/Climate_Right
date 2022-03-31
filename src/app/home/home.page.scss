@@ -25,3 +25,27 @@
 #container a {
   text-decoration: none;
 }
+
+.background--picture {
+  background-image: url('../../assets/background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top;
+
+  height: 100vh;
+  position: relative;
+  transform: translateY(-10px);
+}
+
+.logo {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+
+  transform: translateY(100px);
+  padding-top: 120px;
+  margin-top: 10px;
+  margin-bottom: 130px;
+  height: 260px;
+}
