@@ -6,7 +6,9 @@ import { ActionSheetController, AlertController } from '@ionic/angular';
   styleUrls: ['./form.page.scss'],
 })
 export class FormPage implements OnInit {
-unit:boolean;
+
+public genders= ['Male', 'Female', 'Non-Binary'];
+zones =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'];
 
 constructor( private actionSheetCtrl: ActionSheetController,
   private alertCtrl: AlertController) { }
