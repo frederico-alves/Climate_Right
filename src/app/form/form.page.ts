@@ -9,7 +9,7 @@ import { Button } from 'protractor';
 export class FormPage implements OnInit {
 
 public genders= ['Male', 'Female', 'Non-Binary'];
-zones =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'];
+zones =['Zone 1','Zone 2','Zone 3','Zone 4','Zone 5','Zone 6','Zone 7','Zone 8','Zone 9','Zone 10','Zone 11','Zone 12','Zone 13','Zone 14','Zone 15','Zone 16'];
 
 constructor( private actionSheetCtrl: ActionSheetController,
   private alertCtrl: AlertController,
