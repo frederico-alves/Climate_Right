@@ -190,7 +190,7 @@ fieldset {
 }
 
 /* ============================= */
-/* MOBILE WIDTH SIZE             */
+/* SMALL DESKTOP WINDOW / TABLET SIZE  */
 /* ============================= */
 @media only screen and (max-width: 48.125em) {
   h2 {
@@ -209,8 +209,43 @@ fieldset {
     width: 350px;
   }
 
+  ion-list {
+    display: unset;
+  }
+
+  ion-item {
+    margin: 35px 80px;
+  }
+
   .center-button {
     margin-left: 160px;
+  }
+
+  .submit-button {
+    margin-top: 30px;
+  }
+
+}
+
+/* ============================= */
+/* MOBILE WIDTH SIZE             */
+/* ============================= */
+@media only screen and (max-width: 470px) {
+  h2 {
+    background-color: red;
+    font-size: 20px;
+    padding-left: 80px;
+    margin-top: -20px ;
+    margin-bottom: -50px;
+  }
+
+  .container-group {
+    justify-content: left;
+    margin-left: 30px;
+  }
+
+  .options {
+    width: 240px;
   }
 
   ion-list {
@@ -218,7 +253,12 @@ fieldset {
   }
 
   ion-item {
-    margin: 35px 80px;
+    margin: 20px 10px;
+    width: 90%;
+  }
+
+  .center-button {
+    margin-left: 110px;
   }
 
   .submit-button {
