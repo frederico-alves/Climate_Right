@@ -43,9 +43,17 @@
   background-attachment: fixed;
   background-position: top;
 
-  transform: translateY(100px);
-  padding-top: 120px;
+  transform: translateY(40px);
   margin-top: 10px;
-  margin-bottom: 130px;
+  margin-bottom: 60px;
   height: 260px;
+}
+
+p {
+  max-width: 60%;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin: 20px auto;
+  margin-bottom: 50px;
 }

@@ -24,3 +24,17 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.center-button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block !important;
+
+  max-width: 120px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+
