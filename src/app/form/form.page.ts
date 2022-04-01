@@ -20,27 +20,27 @@ constructor( private actionSheetCtrl: ActionSheetController,
 
  /* async presentActionSheet(){
     const actionSheet = await this.actionSheetCtrl.create({
-    
+
       }
     );
   }*/
   async presentAlertSheetTemperature(){
     const alert = await this.alertCtrl.create({
-      message:"How do you feel the temperature in your zone right now <br> Note: Temperature in this room can vary between 18.5°C and 21.5°C",
+      message:"How do you feel the temperature in your zone right now <br><br>Note: Temperature in this room can vary between 18.5°C and 21.5°C",
       buttons :[{ text :'ok', role :'cancel'}]
     });
     await alert.present();
   }
   async presentAlertSheetAirQuality(){
     const alert = await this.alertCtrl.create({
-      message:"How do you feel the polution level in your zone right now?<br>Very tired: the polution is high, you feel sleepy, tired.<br> Very energetic: the polution is low, you feel fresh and full of energy.<br>To give a good evaluation, lack of sleep or excessive physical activities should not be counted as factors of tiredness.",
+      message:"How do you feel the polution level in your zone right now?<br><br>Very tired: the polution is high, you feel sleepy, tired.<br><br>Very energetic: the polution is low, you feel fresh and full of energy.<br><br>To give a good evaluation, lack of sleep or excessive physical activities should not be counted as factors of tiredness.",
       buttons :[{ text :'ok', role :'cancel'}]
     });
     await alert.present();
   }
   async presentAlertSheetHumidity(){
     const alert = await this.alertCtrl.create({
-      message:"How do you feel the humidity in your zone right now?<br>Very dry: you feel your throat is dry.<br> Very muggy: clammy skin.<br>Note: Humidity in this room can vary between 60% and 80%",
+      message:"How do you feel the humidity in your zone right now?<br><br>Very dry: you feel your throat is dry.<br> Very muggy: clammy skin.<br><br>Note: Humidity in this room can vary between 60% and 80%",
       buttons :[{ text :'ok', role :'cancel'}]
     });
     await alert.present();
@@ -50,12 +50,12 @@ constructor( private actionSheetCtrl: ActionSheetController,
       message: 'Your settings have been saved',
       duration: 2000,
       position: 'bottom'
-      
+
     });
     await toast.present();
   }
 
-  
+
 
 }
 

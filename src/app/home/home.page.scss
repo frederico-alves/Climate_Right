@@ -50,10 +50,26 @@
 }
 
 p {
-  max-width: 60%;
+  max-width: 670px;
   color: white;
   font-size: 20px;
   text-align: center;
   margin: 20px auto;
   margin-bottom: 50px;
+}
+
+// RESPONSIVE
+
+/* ============================= */
+/* MOBILE WIDTH SIZE             */
+/* ============================= */
+@media only screen and (max-width: 48.125em) {
+
+  .logo {
+    margin-bottom: 70px;
+  }
+
+	p {
+		max-width: 93%;
+	}
 }
