@@ -9,21 +9,14 @@ import { Button } from 'protractor';
 export class FormPage implements OnInit {
 
 public genders= ['Male', 'Female', 'Non-Binary'];
-zones =['Zone 1','Zone 2','Zone 3','Zone 4','Zone 5','Zone 6','Zone 7','Zone 8','Zone 9','Zone 10','Zone 11','Zone 12','Zone 13','Zone 14','Zone 15','Zone 16'];
+public zones =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'];
 
-constructor( private actionSheetCtrl: ActionSheetController,
-  private alertCtrl: AlertController,
+constructor( private alertCtrl: AlertController,
   private toastController: ToastController) { }
 
   ngOnInit() {
   }
 
- /* async presentActionSheet(){
-    const actionSheet = await this.actionSheetCtrl.create({
-
-      }
-    );
-  }*/
   async presentAlertSheetTemperature(){
     const alert = await this.alertCtrl.create({
       message:"How do you feel the temperature in your zone right now <br><br>Note: Temperature in this room can vary between 18.5°C and 21.5°C",
@@ -40,7 +33,7 @@ constructor( private actionSheetCtrl: ActionSheetController,
   }
   async presentAlertSheetHumidity(){
     const alert = await this.alertCtrl.create({
-      message:"How do you feel the humidity in your zone right now?<br><br>Very dry: you feel your throat is dry.<br> Very muggy: clammy skin.<br><br>Note: Humidity in this room can vary between 60% and 80%",
+      message:"How do you feel the humidity in your zone right now?<br><br>Very dry: you feel your throat is dry.<br> Very muggy: unpleasantly warm and humid, clammy skin.<br><br>Note: Humidity in this room can vary between 60% and 80%",
       buttons :[{ text :'ok', role :'cancel'}]
     });
     await alert.present();
@@ -48,7 +41,7 @@ constructor( private actionSheetCtrl: ActionSheetController,
   async showMyToast() {
     const toast = await this.toastController.create({
       message: 'Your settings have been saved',
-      duration: 2000,
+      duration: 3000,
       position: 'bottom'
 
     });
