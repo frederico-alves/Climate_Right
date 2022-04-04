@@ -138,6 +138,7 @@
                                 <a href="#genders" >genders</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#zones" >zones</a>
                             </li>
                         </ul>
@@ -189,7 +190,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(actionSheetCtrl: ActionSheetController, alertCtrl: AlertController, toastController: ToastController)</code>
+<code>constructor(alertCtrl: AlertController, toastController: ToastController)</code>
                     </td>
                 </tr>
                         <tr>
@@ -211,18 +212,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                        <td>actionSheetCtrl</td>
-                                                  
-                                                        <td>
-                                                                    <code>ActionSheetController</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
                                                 <tr>
                                                         <td>alertCtrl</td>
                                                   
@@ -285,8 +274,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/form/form.page.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/form/form.page.ts:17</a></div>
                 </td>
             </tr>
 
@@ -324,8 +313,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/form/form.page.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/form/form.page.ts:27</a></div>
                 </td>
             </tr>
 
@@ -363,8 +352,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">src/app/form/form.page.ts:41</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/form/form.page.ts:34</a></div>
                 </td>
             </tr>
 
@@ -402,8 +391,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/form/form.page.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/form/form.page.ts:20</a></div>
                 </td>
             </tr>
 
@@ -441,8 +430,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/form/form.page.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/form/form.page.ts:41</a></div>
                 </td>
             </tr>
 
@@ -502,6 +491,7 @@
                 <td class="col-md-4">
                     <a name="zones"></a>
                     <span class="name">
+                            <span class="modifier">Public</span>
                         <span ><b>zones</b></span>
                         <a href="#zones"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -515,7 +505,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>[&#x27;Zone 1&#x27;,&#x27;Zone 2&#x27;,&#x27;Zone 3&#x27;,&#x27;Zone 4&#x27;,&#x27;Zone 5&#x27;,&#x27;Zone 6&#x27;,&#x27;Zone 7&#x27;,&#x27;Zone 8&#x27;,&#x27;Zone 9&#x27;,&#x27;Zone 10&#x27;,&#x27;Zone 11&#x27;,&#x27;Zone 12&#x27;,&#x27;Zone 13&#x27;,&#x27;Zone 14&#x27;,&#x27;Zone 15&#x27;,&#x27;Zone 16&#x27;]</code>
+                        <i>Default value : </i><code>[&#x27;1&#x27;,&#x27;2&#x27;,&#x27;3&#x27;,&#x27;4&#x27;,&#x27;5&#x27;,&#x27;6&#x27;,&#x27;7&#x27;,&#x27;8&#x27;,&#x27;9&#x27;,&#x27;10&#x27;,&#x27;11&#x27;,&#x27;12&#x27;,&#x27;13&#x27;,&#x27;14&#x27;,&#x27;15&#x27;,&#x27;16&#x27;]</code>
                     </td>
                 </tr>
                     <tr>
@@ -544,21 +534,14 @@ import { Button } from &#x27;protractor&#x27;;
 export class FormPage implements OnInit {
 
 public genders&#x3D; [&#x27;Male&#x27;, &#x27;Female&#x27;, &#x27;Non-Binary&#x27;];
-zones &#x3D;[&#x27;Zone 1&#x27;,&#x27;Zone 2&#x27;,&#x27;Zone 3&#x27;,&#x27;Zone 4&#x27;,&#x27;Zone 5&#x27;,&#x27;Zone 6&#x27;,&#x27;Zone 7&#x27;,&#x27;Zone 8&#x27;,&#x27;Zone 9&#x27;,&#x27;Zone 10&#x27;,&#x27;Zone 11&#x27;,&#x27;Zone 12&#x27;,&#x27;Zone 13&#x27;,&#x27;Zone 14&#x27;,&#x27;Zone 15&#x27;,&#x27;Zone 16&#x27;];
+public zones &#x3D;[&#x27;1&#x27;,&#x27;2&#x27;,&#x27;3&#x27;,&#x27;4&#x27;,&#x27;5&#x27;,&#x27;6&#x27;,&#x27;7&#x27;,&#x27;8&#x27;,&#x27;9&#x27;,&#x27;10&#x27;,&#x27;11&#x27;,&#x27;12&#x27;,&#x27;13&#x27;,&#x27;14&#x27;,&#x27;15&#x27;,&#x27;16&#x27;];
 
-constructor( private actionSheetCtrl: ActionSheetController,
-  private alertCtrl: AlertController,
+constructor( private alertCtrl: AlertController,
   private toastController: ToastController) { }
 
   ngOnInit() {
   }
 
- /* async presentActionSheet(){
-    const actionSheet &#x3D; await this.actionSheetCtrl.create({
-
-      }
-    );
-  }*/
   async presentAlertSheetTemperature(){
     const alert &#x3D; await this.alertCtrl.create({
       message:&quot;How do you feel the temperature in your zone right now &lt;br&gt;&lt;br&gt;Note: Temperature in this room can vary between 18.5°C and 21.5°C&quot;,
@@ -575,7 +558,7 @@ constructor( private actionSheetCtrl: ActionSheetController,
   }
   async presentAlertSheetHumidity(){
     const alert &#x3D; await this.alertCtrl.create({
-      message:&quot;How do you feel the humidity in your zone right now?&lt;br&gt;&lt;br&gt;Very dry: you feel your throat is dry.&lt;br&gt; Very muggy: clammy skin.&lt;br&gt;&lt;br&gt;Note: Humidity in this room can vary between 60% and 80%&quot;,
+      message:&quot;How do you feel the humidity in your zone right now?&lt;br&gt;&lt;br&gt;Very dry: you feel your throat is dry.&lt;br&gt; Very muggy: unpleasantly warm and humid, clammy skin.&lt;br&gt;&lt;br&gt;Note: Humidity in this room can vary between 60% and 80%&quot;,
       buttons :[{ text :&#x27;ok&#x27;, role :&#x27;cancel&#x27;}]
     });
     await alert.present();
@@ -583,7 +566,7 @@ constructor( private actionSheetCtrl: ActionSheetController,
   async showMyToast() {
     const toast &#x3D; await this.toastController.create({
       message: &#x27;Your settings have been saved&#x27;,
-      duration: 2000,
+      duration: 3000,
       position: &#x27;bottom&#x27;
 
     });

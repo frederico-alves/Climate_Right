@@ -1,3 +1,18 @@
+// CUSTOM RADIO
+
+ion-radio {
+  --color: red;
+  // padding: 20px;
+  border-style: solid;
+  border-width: 5px;
+}
+
+ion-radio label {
+  display: table;
+  float: left;
+  height: 100%;
+}
+
 ion-icon {
   background-color: #3880ff;
   color: white;
@@ -20,7 +35,7 @@ ion-item {
 }
 
 h2 {
-  margin-top: 20px;
+  margin-top: 60px;
   margin-bottom: 40px;
 
   font-size: 30px;
@@ -168,8 +183,8 @@ fieldset {
 
 
 .submit-button {
-  margin-top: 50px;
-  margin-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 40px;
 }
 
 
