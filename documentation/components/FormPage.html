@@ -582,20 +582,6 @@ constructor( private alertCtrl: AlertController,
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ion-content&gt;
-  &lt;ion-list&gt;
-    &lt;ion-item&gt;
-    &lt;ion-label&gt;Gender&lt;/ion-label&gt;
-    &lt;ion-select placeholder&#x3D;&quot;Select One&quot;&gt;
-      &lt;ion-select-option *ngFor&#x3D;&quot;let gender of genders&quot; &gt; {{gender}}&lt;/ion-select-option&gt;
-    &lt;/ion-select&gt;
-    &lt;/ion-item&gt;
-    &lt;ion-item&gt;
-      &lt;ion-label&gt;Zone&lt;/ion-label&gt;
-      &lt;ion-select placeholder&#x3D;&quot;Select One&quot;&gt;
-        &lt;ion-select-option *ngFor&#x3D;&quot;let zone of zones&quot; &gt; {{zone}}&lt;/ion-select-option&gt;
-      &lt;/ion-select&gt;
-    &lt;/ion-item&gt;
-  &lt;/ion-list&gt;
 
   &lt;h2 class&#x3D;&quot;center-text&quot;&gt;How are you feeling?&lt;/h2&gt;
 
@@ -743,6 +729,8 @@ constructor( private alertCtrl: AlertController,
 &lt;/fieldset&gt;&lt;!-- GROUP 3 MUGGY/DRY --&gt;
 &lt;/div&gt;&lt;!-- GROUP 3 USER INPUT --&gt;
 
+
+
   &lt;div class&#x3D;&quot;info-section&quot;&gt;
     &lt;ion-icon (click) &#x3D;&quot;presentAlertSheetHumidity()&quot;  size&#x3D;&quot;large&quot; name&#x3D;&quot;information&quot; style&#x3D;&quot;cursor: pointer;&quot;&gt;  &lt;/ion-icon&gt;
   &lt;/div&gt;
@@ -750,23 +738,29 @@ constructor( private alertCtrl: AlertController,
 &lt;/div&gt; &lt;!-- GROUP 3 CONTAINER --&gt;
 &lt;/section&gt;
 
-  &lt;!-- IONIC-RADIO-GROUP --&gt;
-  &lt;!-- &lt;ion-radio-group&gt;
-    &lt;ion-grid class&#x3D;&quot;ionic-group&quot;&gt;
-      &lt;ion-row&gt;
-        &lt;ion-col&gt;Very Cold&lt;/ion-col&gt;
-        &lt;ion-col style&#x3D;&quot;text-align: right;&quot;&gt;Very Hot&lt;/ion-col&gt;
+&lt;!-- IONIC BARS --&gt;
+&lt;!-- &lt;div class&#x3D;&quot;IONIC-BARS radio-bars&quot;&gt;
+  &lt;ion-radio-group class&#x3D;&quot;container-group&quot;&gt;
+    &lt;ion-grid class&#x3D;&quot;user-input&quot;&gt;
+      &lt;ion-row class&#x3D;&quot;space-between&quot;&gt;
+        &lt;ion-col class&#x3D;&quot;signifiers&quot;&gt;Very Cold&lt;/ion-col&gt;
+        &lt;ion-col class&#x3D;&quot;signifiers&quot;&gt;Very Hot&lt;/ion-col&gt;
       &lt;/ion-row&gt;
       &lt;ion-row class&#x3D;&quot;options&quot;&gt;
-        &lt;ion-col&gt; &lt;ion-radio value&#x3D;&quot;1&quot; &gt; &lt;/ion-radio&gt; &lt;/ion-col&gt;
+        &lt;ion-col&gt; &lt;ion-radio value&#x3D;&quot;1&quot; &gt;
+          &lt;label&gt;
+            &lt;input type&#x3D;&#x27;radio&#x27; value&#x3D;&quot;value11&quot; name&#x3D;&quot;group2&quot;&gt;
+              &lt;span class&#x3D;&#x27;clickable&#x27;&gt;&lt;/span&gt;
+          &lt;/label&gt;
+        &lt;/ion-radio&gt; &lt;/ion-col&gt;
         &lt;ion-col&gt; &lt;ion-radio value&#x3D;&quot;2&quot; &gt; &lt;/ion-radio&gt; &lt;/ion-col&gt;
         &lt;ion-col&gt; &lt;ion-radio value&#x3D;&quot;3&quot;&gt; &lt;/ion-radio&gt; &lt;/ion-col&gt;
         &lt;ion-col&gt; &lt;ion-radio value&#x3D;&quot;4&quot;&gt; &lt;/ion-radio&gt; &lt;/ion-col&gt;
         &lt;ion-col&gt; &lt;ion-radio value&#x3D;&quot;5&quot; &gt; &lt;/ion-radio&gt; &lt;/ion-col&gt;
         &lt;ion-col&gt; &lt;ion-radio value&#x3D;&quot;6&quot; &gt; &lt;/ion-radio&gt; &lt;/ion-col&gt;
-        &lt;ion-col&gt; &lt;ion-icon (click) &#x3D;&quot;presentAlertSheetTemperature()&quot;  size&#x3D;&quot;large&quot; name&#x3D;&quot;information&quot;&gt;  &lt;/ion-icon&gt;&lt;/ion-col&gt;
       &lt;/ion-row&gt;
     &lt;/ion-grid&gt;
+        &lt;ion-col&gt; &lt;ion-icon (click) &#x3D;&quot;presentAlertSheetTemperature()&quot;  size&#x3D;&quot;large&quot; name&#x3D;&quot;information&quot;&gt;  &lt;/ion-icon&gt;&lt;/ion-col&gt;
   &lt;/ion-radio-group&gt;
 
   &lt;ion-radio-group&gt;
@@ -805,7 +799,23 @@ constructor( private alertCtrl: AlertController,
         &lt;ion-col&gt; &lt;ion-icon (click) &#x3D;&quot;presentAlertSheetHumidity()&quot; size&#x3D;&quot;large&quot; name&#x3D;&quot;information&quot;&gt;  &lt;/ion-icon&gt;&lt;/ion-col&gt;
       &lt;/ion-row&gt;
     &lt;/ion-grid&gt;
-  &lt;/ion-radio-group&gt; --&gt;
+  &lt;/ion-radio-group&gt;
+&lt;/div&gt; --&gt;
+
+&lt;ion-list&gt;
+  &lt;ion-item&gt;
+  &lt;ion-label&gt;Gender&lt;/ion-label&gt;
+  &lt;ion-select placeholder&#x3D;&quot;Select One&quot;&gt;
+    &lt;ion-select-option *ngFor&#x3D;&quot;let gender of genders&quot; &gt; {{gender}}&lt;/ion-select-option&gt;
+  &lt;/ion-select&gt;
+  &lt;/ion-item&gt;
+  &lt;ion-item&gt;
+    &lt;ion-label&gt;Zone&lt;/ion-label&gt;
+    &lt;ion-select placeholder&#x3D;&quot;Select One&quot;&gt;
+      &lt;ion-select-option *ngFor&#x3D;&quot;let zone of zones&quot; &gt; {{zone}}&lt;/ion-select-option&gt;
+    &lt;/ion-select&gt;
+  &lt;/ion-item&gt;
+&lt;/ion-list&gt;
 
   &lt;ion-button class&#x3D;&quot;center-button submit-button&quot; routerLink&#x3D;&quot;/home&quot; routerDirection&#x3D;&quot;forward&quot;
       slot&#x3D;&quot;&quot; (click)&#x3D;&quot;showMyToast()&quot;&gt;
@@ -820,7 +830,22 @@ constructor( private alertCtrl: AlertController,
                 <p class="comment">
                     <code>./form.page.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">ion-icon {
+                <pre class="line-numbers"><code class="language-scss">// CUSTOM RADIO
+
+ion-radio {
+  --color: red;
+  // padding: 20px;
+  border-style: solid;
+  border-width: 5px;
+}
+
+ion-radio label {
+  display: table;
+  float: left;
+  height: 100%;
+}
+
+ion-icon {
   background-color: #3880ff;
   color: white;
   border-radius: 100%;
@@ -842,7 +867,7 @@ ion-item {
 }
 
 h2 {
-  margin-top: 20px;
+  margin-top: 60px;
   margin-bottom: 40px;
 
   font-size: 30px;
@@ -990,8 +1015,8 @@ fieldset {
 
 
 .submit-button {
-  margin-top: 50px;
-  margin-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 40px;
 }
 
 
@@ -1116,7 +1141,7 @@ fieldset {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ion-content>  <ion-list>    <ion-item>    <ion-label>Gender</ion-label>    <ion-select placeholder="Select One">      <ion-select-option *ngFor="let gender of genders" > {{gender}}</ion-select-option>    </ion-select>    </ion-item>    <ion-item>      <ion-label>Zone</ion-label>      <ion-select placeholder="Select One">        <ion-select-option *ngFor="let zone of zones" > {{zone}}</ion-select-option>      </ion-select>    </ion-item>  </ion-list>  <h2 class="center-text">How are you feeling?</h2>  <!-- RADIO BARS -->  <section class="radio-bars"><!-- =================== --><!--       GROUP 1       --><!-- =================== --><div class="container-group"><div class="user-input"><!-- SIGNIFIERS 1 HOT/COLD --><div class="space-between">  <p class="signifiers">VERY HOT</p>  <p class="signifiers">VERY COLD</p></div><!-- GROUP 1 HOT/COLD --><fieldset id="group1">  <div class=\'options\'>    <label>      <input type=\'radio\' value="value1" name="group1">      <span class=\'clickable clickable--first\'></span>    </label>    <label>      <input type=\'radio\' value="value2" name="group1">      <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value3" name="group1">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value4" name="group1">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value5" name="group1">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value6" name="group1">        <span class=\'clickable clickable--last\'></span>    </label>  </div>  </fieldset> <!-- GROUP 1 HOT/COLD --></div><!-- GROUP 1 USER INPUT --><div class="info-section">  <ion-icon (click) ="presentAlertSheetTemperature()"  size="large" name="information" style="cursor: pointer;">  </ion-icon></div></div> <!-- GROUP 1 CONTAINER --><!-- =================== --><!--       GROUP 2       --><!-- =================== --><div class="container-group"><div class="user-input"><!-- SIGNIFIERS 2 MUGGY/DRY --><div class="space-between">  <p class="signifiers">VERY ENERGETIC</p>  <p class="signifiers">VERY TIRED</p></div><!-- GROUP 2 MUGGY/DRY --><fieldset id="group2">  <div class=\'options\'>    <label>      <input type=\'radio\' value="value7" name="group2">        <span class=\'clickable clickable--first\'></span>    </label>    <label>      <input type=\'radio\' value="value8" name="group2">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value9" name="group2">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value10" name="group2">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value11" name="group2">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value12" name="group2">        <span class=\'clickable clickable--last\'></span>    </label>  </div></fieldset><!-- GROUP 2 MUGGY/DRY --></div> <!-- GROUP 2 USER INPUT --><div class="info-section">  <ion-icon (click) ="presentAlertSheetAirQuality()"  size="large" name="information" style="cursor: pointer;">  </ion-icon></div></div> <!-- GROUP 2 CONTAINER --><!-- =================== --><!--       GROUP 3       --><!-- =================== --><div class="container-group"><div class="user-input"><!-- SIGNIFIERS 3 MUGGY/DRY --><div class="space-between">  <p class="signifiers">VERY MUGGY</p>  <p class="signifiers">VERY DRY</p></div><!-- GROUP 3 MUGGY/DRY --><fieldset id="group3">  <div class=\'options\'>    <label>      <input type=\'radio\' value="value13" name="group3">        <span class=\'clickable clickable--first\'></span>    </label>    <label>      <input type=\'radio\' value="value14" name="group3">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value15" name="group3">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value16" name="group3">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value17" name="group3">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value18" name="group3">        <span class=\'clickable clickable--last\'></span>    </label></div></fieldset><!-- GROUP 3 MUGGY/DRY --></div><!-- GROUP 3 USER INPUT -->  <div class="info-section">    <ion-icon (click) ="presentAlertSheetHumidity()"  size="large" name="information" style="cursor: pointer;">  </ion-icon>  </div></div> <!-- GROUP 3 CONTAINER --></section>  <!-- IONIC-RADIO-GROUP -->  <!-- <ion-radio-group>    <ion-grid class="ionic-group">      <ion-row>        <ion-col>Very Cold</ion-col>        <ion-col style="text-align: right;">Very Hot</ion-col>      </ion-row>      <ion-row class="options">        <ion-col> <ion-radio value="1" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="2" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="3"> </ion-radio> </ion-col>        <ion-col> <ion-radio value="4"> </ion-radio> </ion-col>        <ion-col> <ion-radio value="5" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="6" > </ion-radio> </ion-col>        <ion-col> <ion-icon (click) ="presentAlertSheetTemperature()"  size="large" name="information">  </ion-icon></ion-col>      </ion-row>    </ion-grid>  </ion-radio-group>  <ion-radio-group>    <ion-grid class="ionic-group">      <ion-row>        <ion-col>Very Tired</ion-col>        <ion-col></ion-col>        <ion-col style="text-align: right;">Very Energetic</ion-col>      </ion-row>      <ion-row>        <ion-col> <ion-radio value="1" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="2" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="3"> </ion-radio> </ion-col>        <ion-col> <ion-radio value="4"> </ion-radio> </ion-col>        <ion-col> <ion-radio value="5" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="6" > </ion-radio> </ion-col>        <ion-col> <ion-icon (click) ="presentAlertSheetAirQuality()"  size="large" name="information">  </ion-icon></ion-col>      </ion-row>    </ion-grid>  </ion-radio-group>  <ion-radio-group >    <ion-grid class="ionic-group">      <ion-row>        <ion-col>Very Dry </ion-col>        <ion-col></ion-col>        <ion-col style="text-align: right;">Very Muggy</ion-col>      </ion-row>      <ion-row>        <ion-col> <ion-radio value="1" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="2" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="3"> </ion-radio> </ion-col>        <ion-col> <ion-radio value="4"> </ion-radio> </ion-col>        <ion-col> <ion-radio value="5" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="6" > </ion-radio> </ion-col>        <ion-col> <ion-icon (click) ="presentAlertSheetHumidity()" size="large" name="information">  </ion-icon></ion-col>      </ion-row>    </ion-grid>  </ion-radio-group> -->  <ion-button class="center-button submit-button" routerLink="/home" routerDirection="forward"      slot="" (click)="showMyToast()">      SUBMIT  </ion-button></ion-content></div>'
+        var COMPONENT_TEMPLATE = '<div><ion-content>  <h2 class="center-text">How are you feeling?</h2>  <!-- RADIO BARS -->  <section class="radio-bars"><!-- =================== --><!--       GROUP 1       --><!-- =================== --><div class="container-group"><div class="user-input"><!-- SIGNIFIERS 1 HOT/COLD --><div class="space-between">  <p class="signifiers">VERY HOT</p>  <p class="signifiers">VERY COLD</p></div><!-- GROUP 1 HOT/COLD --><fieldset id="group1">  <div class=\'options\'>    <label>      <input type=\'radio\' value="value1" name="group1">      <span class=\'clickable clickable--first\'></span>    </label>    <label>      <input type=\'radio\' value="value2" name="group1">      <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value3" name="group1">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value4" name="group1">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value5" name="group1">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value6" name="group1">        <span class=\'clickable clickable--last\'></span>    </label>  </div>  </fieldset> <!-- GROUP 1 HOT/COLD --></div><!-- GROUP 1 USER INPUT --><div class="info-section">  <ion-icon (click) ="presentAlertSheetTemperature()"  size="large" name="information" style="cursor: pointer;">  </ion-icon></div></div> <!-- GROUP 1 CONTAINER --><!-- =================== --><!--       GROUP 2       --><!-- =================== --><div class="container-group"><div class="user-input"><!-- SIGNIFIERS 2 MUGGY/DRY --><div class="space-between">  <p class="signifiers">VERY ENERGETIC</p>  <p class="signifiers">VERY TIRED</p></div><!-- GROUP 2 MUGGY/DRY --><fieldset id="group2">  <div class=\'options\'>    <label>      <input type=\'radio\' value="value7" name="group2">        <span class=\'clickable clickable--first\'></span>    </label>    <label>      <input type=\'radio\' value="value8" name="group2">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value9" name="group2">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value10" name="group2">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value11" name="group2">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value12" name="group2">        <span class=\'clickable clickable--last\'></span>    </label>  </div></fieldset><!-- GROUP 2 MUGGY/DRY --></div> <!-- GROUP 2 USER INPUT --><div class="info-section">  <ion-icon (click) ="presentAlertSheetAirQuality()"  size="large" name="information" style="cursor: pointer;">  </ion-icon></div></div> <!-- GROUP 2 CONTAINER --><!-- =================== --><!--       GROUP 3       --><!-- =================== --><div class="container-group"><div class="user-input"><!-- SIGNIFIERS 3 MUGGY/DRY --><div class="space-between">  <p class="signifiers">VERY MUGGY</p>  <p class="signifiers">VERY DRY</p></div><!-- GROUP 3 MUGGY/DRY --><fieldset id="group3">  <div class=\'options\'>    <label>      <input type=\'radio\' value="value13" name="group3">        <span class=\'clickable clickable--first\'></span>    </label>    <label>      <input type=\'radio\' value="value14" name="group3">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value15" name="group3">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value16" name="group3">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value17" name="group3">        <span class=\'clickable\'></span>    </label>    <label>      <input type=\'radio\' value="value18" name="group3">        <span class=\'clickable clickable--last\'></span>    </label></div></fieldset><!-- GROUP 3 MUGGY/DRY --></div><!-- GROUP 3 USER INPUT -->  <div class="info-section">    <ion-icon (click) ="presentAlertSheetHumidity()"  size="large" name="information" style="cursor: pointer;">  </ion-icon>  </div></div> <!-- GROUP 3 CONTAINER --></section><!-- IONIC BARS --><!-- <div class="IONIC-BARS radio-bars">  <ion-radio-group class="container-group">    <ion-grid class="user-input">      <ion-row class="space-between">        <ion-col class="signifiers">Very Cold</ion-col>        <ion-col class="signifiers">Very Hot</ion-col>      </ion-row>      <ion-row class="options">        <ion-col> <ion-radio value="1" >          <label>            <input type=\'radio\' value="value11" name="group2">              <span class=\'clickable\'></span>          </label>        </ion-radio> </ion-col>        <ion-col> <ion-radio value="2" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="3"> </ion-radio> </ion-col>        <ion-col> <ion-radio value="4"> </ion-radio> </ion-col>        <ion-col> <ion-radio value="5" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="6" > </ion-radio> </ion-col>      </ion-row>    </ion-grid>        <ion-col> <ion-icon (click) ="presentAlertSheetTemperature()"  size="large" name="information">  </ion-icon></ion-col>  </ion-radio-group>  <ion-radio-group>    <ion-grid class="ionic-group">      <ion-row>        <ion-col>Very Tired</ion-col>        <ion-col></ion-col>        <ion-col style="text-align: right;">Very Energetic</ion-col>      </ion-row>      <ion-row>        <ion-col> <ion-radio value="1" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="2" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="3"> </ion-radio> </ion-col>        <ion-col> <ion-radio value="4"> </ion-radio> </ion-col>        <ion-col> <ion-radio value="5" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="6" > </ion-radio> </ion-col>        <ion-col> <ion-icon (click) ="presentAlertSheetAirQuality()"  size="large" name="information">  </ion-icon></ion-col>      </ion-row>    </ion-grid>  </ion-radio-group>  <ion-radio-group >    <ion-grid class="ionic-group">      <ion-row>        <ion-col>Very Dry </ion-col>        <ion-col></ion-col>        <ion-col style="text-align: right;">Very Muggy</ion-col>      </ion-row>      <ion-row>        <ion-col> <ion-radio value="1" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="2" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="3"> </ion-radio> </ion-col>        <ion-col> <ion-radio value="4"> </ion-radio> </ion-col>        <ion-col> <ion-radio value="5" > </ion-radio> </ion-col>        <ion-col> <ion-radio value="6" > </ion-radio> </ion-col>        <ion-col> <ion-icon (click) ="presentAlertSheetHumidity()" size="large" name="information">  </ion-icon></ion-col>      </ion-row>    </ion-grid>  </ion-radio-group></div> --><ion-list>  <ion-item>  <ion-label>Gender</ion-label>  <ion-select placeholder="Select One">    <ion-select-option *ngFor="let gender of genders" > {{gender}}</ion-select-option>  </ion-select>  </ion-item>  <ion-item>    <ion-label>Zone</ion-label>    <ion-select placeholder="Select One">      <ion-select-option *ngFor="let zone of zones" > {{zone}}</ion-select-option>    </ion-select>  </ion-item></ion-list>  <ion-button class="center-button submit-button" routerLink="/home" routerDirection="forward"      slot="" (click)="showMyToast()">      SUBMIT  </ion-button></ion-content></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FormPage', 'selector': 'app-form'},{'name': 'HomePage', 'selector': 'app-home'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FormPage'};
