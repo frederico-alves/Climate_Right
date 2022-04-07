@@ -50,6 +50,7 @@ constructor(public http: HttpClient, private alertCtrl: AlertController,
 
     console.log(postData);
 
+    // POSTING DATA IN THE API METHOD
     this.http.post('https://mentals-shower.herokuapp.com', postData, {headers: YourHeaders})
       .subscribe(data => {
         console.log(data);

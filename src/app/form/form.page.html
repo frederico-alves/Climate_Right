@@ -170,13 +170,8 @@
   </ion-item>
 </ion-list>
 
-  <ion-button class="center-button submit-button"
-      slot="" ion-button (click)="consoleLogData()">
-      POST BUTTON
-  </ion-button>
-
   <ion-button class="center-button submit-button" routerLink="/home" routerDirection="forward"
-      slot="" (click)="showMyToast()">
+      slot="" ion-button (click)="consoleLogData()" (click)="showMyToast()">
       SUBMIT
   </ion-button>
 
