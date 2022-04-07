@@ -19,27 +19,27 @@
 <fieldset id="group1">
   <div class='options'>
     <label>
-      <input type='radio' value="value1" name="group1">
+      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="1">
       <span class='clickable clickable--first'></span>
     </label>
     <label>
-      <input type='radio' value="value2" name="group1">
+      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="2">
       <span class='clickable'></span>
     </label>
     <label>
-      <input type='radio' value="value3" name="group1">
+      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="3">
         <span class='clickable'></span>
     </label>
     <label>
-      <input type='radio' value="value4" name="group1">
+      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="4">
         <span class='clickable'></span>
     </label>
     <label>
-      <input type='radio' value="value5" name="group1">
+      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="5">
         <span class='clickable'></span>
     </label>
     <label>
-      <input type='radio' value="value6" name="group1">
+      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="6">
         <span class='clickable clickable--last'></span>
     </label>
   </div>
@@ -66,27 +66,27 @@
 <fieldset id="group2">
   <div class='options'>
     <label>
-      <input type='radio' value="value7" name="group2">
+      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="1">
         <span class='clickable clickable--first'></span>
     </label>
     <label>
-      <input type='radio' value="value8" name="group2">
+      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="2">
         <span class='clickable'></span>
     </label>
     <label>
-      <input type='radio' value="value9" name="group2">
+      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="3">
         <span class='clickable'></span>
     </label>
     <label>
-      <input type='radio' value="value10" name="group2">
+      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="4">
         <span class='clickable'></span>
     </label>
     <label>
-      <input type='radio' value="value11" name="group2">
+      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="5">
         <span class='clickable'></span>
     </label>
     <label>
-      <input type='radio' value="value12" name="group2">
+      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="6">
         <span class='clickable clickable--last'></span>
 
     </label>
@@ -115,31 +115,31 @@
 <fieldset id="group3">
   <div class='options'>
     <label>
-      <input type='radio' value="value13" name="group3">
+      <input [(ngModel)]="humidityGroup" name="group-humidity" type='radio' value="1">
         <span class='clickable clickable--first'></span>
 
     </label>
     <label>
-      <input type='radio' value="value14" name="group3">
+      <input [(ngModel)]="humidityGroup" name="group-humidity" type='radio' value="2">
         <span class='clickable'></span>
 
     </label>
     <label>
-      <input type='radio' value="value15" name="group3">
+      <input [(ngModel)]="humidityGroup" name="group-humidity" type='radio' value="3">
         <span class='clickable'></span>
 
     </label>
     <label>
-      <input type='radio' value="value16" name="group3">
+      <input [(ngModel)]="humidityGroup" name="group-humidity" type='radio' value="4">
         <span class='clickable'></span>
 
     </label>
     <label>
-      <input type='radio' value="value17" name="group3">
+      <input [(ngModel)]="humidityGroup" name="group-humidity" type='radio' value="5">
         <span class='clickable'></span>
     </label>
     <label>
-      <input type='radio' value="value18" name="group3">
+      <input [(ngModel)]="humidityGroup" name="group-humidity" type='radio' value="6">
         <span class='clickable clickable--last'></span>
     </label>
 </div>
@@ -155,70 +155,6 @@
 </div> <!-- GROUP 3 CONTAINER -->
 </section>
 
-<!-- IONIC BARS -->
-<!-- <div class="IONIC-BARS radio-bars">
-  <ion-radio-group class="container-group">
-    <ion-grid class="user-input">
-      <ion-row class="space-between">
-        <ion-col class="signifiers">Very Cold</ion-col>
-        <ion-col class="signifiers">Very Hot</ion-col>
-      </ion-row>
-      <ion-row class="options">
-        <ion-col> <ion-radio value="1" >
-          <label>
-            <input type='radio' value="value11" name="group2">
-              <span class='clickable'></span>
-          </label>
-        </ion-radio> </ion-col>
-        <ion-col> <ion-radio value="2" > </ion-radio> </ion-col>
-        <ion-col> <ion-radio value="3"> </ion-radio> </ion-col>
-        <ion-col> <ion-radio value="4"> </ion-radio> </ion-col>
-        <ion-col> <ion-radio value="5" > </ion-radio> </ion-col>
-        <ion-col> <ion-radio value="6" > </ion-radio> </ion-col>
-      </ion-row>
-    </ion-grid>
-        <ion-col> <ion-icon (click) ="presentAlertSheetTemperature()"  size="large" name="information">  </ion-icon></ion-col>
-  </ion-radio-group>
-
-  <ion-radio-group>
-    <ion-grid class="ionic-group">
-      <ion-row>
-        <ion-col>Very Tired</ion-col>
-        <ion-col></ion-col>
-        <ion-col style="text-align: right;">Very Energetic</ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col> <ion-radio value="1" > </ion-radio> </ion-col>
-        <ion-col> <ion-radio value="2" > </ion-radio> </ion-col>
-        <ion-col> <ion-radio value="3"> </ion-radio> </ion-col>
-        <ion-col> <ion-radio value="4"> </ion-radio> </ion-col>
-        <ion-col> <ion-radio value="5" > </ion-radio> </ion-col>
-        <ion-col> <ion-radio value="6" > </ion-radio> </ion-col>
-        <ion-col> <ion-icon (click) ="presentAlertSheetAirQuality()"  size="large" name="information">  </ion-icon></ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-radio-group>
-
-  <ion-radio-group >
-    <ion-grid class="ionic-group">
-      <ion-row>
-        <ion-col>Very Dry </ion-col>
-        <ion-col></ion-col>
-        <ion-col style="text-align: right;">Very Muggy</ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col> <ion-radio value="1" > </ion-radio> </ion-col>
-        <ion-col> <ion-radio value="2" > </ion-radio> </ion-col>
-        <ion-col> <ion-radio value="3"> </ion-radio> </ion-col>
-        <ion-col> <ion-radio value="4"> </ion-radio> </ion-col>
-        <ion-col> <ion-radio value="5" > </ion-radio> </ion-col>
-        <ion-col> <ion-radio value="6" > </ion-radio> </ion-col>
-        <ion-col> <ion-icon (click) ="presentAlertSheetHumidity()" size="large" name="information">  </ion-icon></ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-radio-group>
-</div> -->
-
 <ion-list>
   <ion-item>
   <ion-label>Gender</ion-label>
@@ -228,11 +164,16 @@
   </ion-item>
   <ion-item>
     <ion-label>Zone</ion-label>
-    <ion-select placeholder="Select One">
+    <ion-select [(ngModel)]="zoneGroup" placeholder="Select One">
       <ion-select-option *ngFor="let zone of zones" > {{zone}}</ion-select-option>
     </ion-select>
   </ion-item>
 </ion-list>
+
+  <ion-button class="center-button submit-button"
+      slot="" ion-button (click)="consoleLogData()">
+      POST BUTTON
+  </ion-button>
 
   <ion-button class="center-button submit-button" routerLink="/home" routerDirection="forward"
       slot="" (click)="showMyToast()">
