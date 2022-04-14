@@ -1,16 +1,40 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>admin</ion-title>
+    <ion-title>ClimateRight - Admin Control Panel</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
+
+  <h1 style="text-transform: uppercase;">Information Buttons</h1>
+  <p>Edit description for each information button</p>
+
   <ion-list>
-      <ion-item *ngFor="let info of infos">
-      
-       Description: {{info.description}} <br>
-      
-      </ion-item>
-      <p> hello</p>
+    <div *ngFor="let info of infos">
+      <div *ngIf="info.id === 1">
+        <h5>Temperature:</h5>
+        <textarea [(ngModel)]="info.description" id="{{info.id}}" cols="50" rows="7"></textarea>
+      </div>
+      <div *ngIf="info.id === 2">
+        <h5>Air Quality:</h5>
+        <textarea [(ngModel)]="info.description" id="{{info.id}}" cols="50" rows="7"></textarea>
+      </div>
+      <div *ngIf="info.id === 3">
+        <h5>Humidity</h5>
+        <textarea [(ngModel)]="info.description" id="{{info.id}}" cols="50" rows="7"></textarea>
+      </div>
+      <!-- <textarea [(ngModel)]="info.description" id="{{info.id}}" cols="80" rows="5"></textarea> -->
+      <!-- <textarea id="info1" cols="20" rows="10">info 1</textarea>
+      <textarea id="info2" cols="20" rows="10">info 2</textarea>
+      <textarea id="info3" cols="20" rows="10">info 3</textarea> -->
+    </div>
   </ion-list>
+
+  <ion-button color="light" (click)="cancelChanges()">
+  CANCEL
+  </ion-button>
+  <ion-button (click)="saveData()">
+  SAVE
+  </ion-button>
+
 </ion-content>

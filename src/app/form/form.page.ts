@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActionSheetController, AlertController, ToastController } from '@ionic/angular';
 import { Button } from 'protractor';
 import { HttpClient } from '@angular/common/http';
+import { Information } from '../models/info.models';
+import { InformationService } from '../services/information.service';
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.page.html',
@@ -11,6 +14,7 @@ export class FormPage implements OnInit {
 
 public genders= ['Male', 'Female', 'Non-Binary'];
 public zones =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'];
+infos: Information[];
 
 zoneGroup: any;
 temperatureGroup: any;
@@ -18,9 +22,23 @@ airQualityGroup: any;
 humidityGroup: any;
 
 constructor(public http: HttpClient, private alertCtrl: AlertController,
-  private toastController: ToastController) { }
+  private toastController: ToastController, private infoServices: InformationService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.retrieveInformations();
+  }
+
+  retrieveInformations(): void {
+    this.infoServices.getAll()
+      .subscribe(
+        data => {
+          this.infos = data;
+          console.log(data);
+          console.log(data.length);
+        },
+        error => {
+          console.log(error);
+        });
   }
 
   consoleLogData(){
@@ -62,21 +80,21 @@ constructor(public http: HttpClient, private alertCtrl: AlertController,
 
   async presentAlertSheetTemperature(){
     const alert = await this.alertCtrl.create({
-      message:"How do you feel the temperature in your zone right now <br><br>Note: Temperature in this room can vary between 18.5°C and 21.5°C",
+      message:this.infos[0].description,
       buttons :[{ text :'ok', role :'cancel'}]
     });
     await alert.present();
   }
   async presentAlertSheetAirQuality(){
     const alert = await this.alertCtrl.create({
-      message:"How do you feel the polution level in your zone right now?<br><br>Very tired: the polution is high, you feel sleepy, tired.<br><br>Very energetic: the polution is low, you feel fresh and full of energy.<br><br>To give a good evaluation, lack of sleep or excessive physical activities should not be counted as factors of tiredness.",
+      message:this.infos[1].description,
       buttons :[{ text :'ok', role :'cancel'}]
     });
     await alert.present();
   }
   async presentAlertSheetHumidity(){
     const alert = await this.alertCtrl.create({
-      message:"How do you feel the humidity in your zone right now?<br><br>Very dry: you feel your throat is dry.<br> Very muggy: unpleasantly warm and humid, clammy skin.<br><br>Note: Humidity in this room can vary between 60% and 80%",
+      message:this.infos[2].description,
       buttons :[{ text :'ok', role :'cancel'}]
     });
     await alert.present();
@@ -84,7 +102,7 @@ constructor(public http: HttpClient, private alertCtrl: AlertController,
   async showMyToast() {
     const toast = await this.toastController.create({
       message: 'Your settings have been saved',
-      duration: 3000,
+      duration: 5000,
       position: 'bottom'
 
     });

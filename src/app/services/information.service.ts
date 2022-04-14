@@ -35,7 +35,7 @@ export class InformationService {
     return this.http.delete(baseUrl);
   }
 
-  findByTitle(title: any): Observable<Information[]> {
-    return this.http.get<Information[]>(`${baseUrl}?title=${title}`);
+  findByInfo(info: any): Observable<Information[]> {
+    return this.http.get<Information[]>(`${baseUrl}?info=${info}`);
   }
 }
