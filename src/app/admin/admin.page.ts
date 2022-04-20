@@ -29,57 +29,91 @@ export class AdminPage implements OnInit {
         });
   }
 
-  saveData(){
-    let id1 = (<HTMLInputElement>document.getElementById('1')).id;
-    let info1 = (<HTMLInputElement>document.getElementById('1')).value;
-    let info1_object = {id:1, description: info1};
+  updateData(){
 
-    let id2 = (<HTMLInputElement>document.getElementById('2')).id;
-    let info2 = (<HTMLInputElement>document.getElementById('2')).value;
-    let info2_object = {id:2, description: info2};
+    // const infoData = (document.querySelectorAll('.info-data'));
+    const infoData = (document.querySelectorAll('#data1'));
+    console.log(infoData);
+    // console.log(infoId);
 
-    let id3 = (<HTMLInputElement>document.getElementById('3')).id;
-    let info3 = (<HTMLInputElement>document.getElementById('3')).value;
-    let info3_object = {id:3, description: info3};
+  }
 
-
-    // console.log(info1_object);
-    // console.log(info2_object);
-    // console.log(info3_object);
-
+  updateDefaultData1(){
+    const id1 = (<HTMLInputElement>document.getElementById('data1')).id;
+    const info1 = (<HTMLInputElement>document.getElementById('data1')).value;
+    const info1object = {id:1, name:'Temperature', description: info1};
+    // console.log(info1object);
     // console.log(id1);
-    // console.log(info1);
-    // console.log(id2);
-    // console.log(info2);
-    // console.log(id3);
-    // console.log(info3);
 
-    this.infoServices.update(1, info1_object).subscribe(
+    this.infoServices.update(1, info1object).subscribe(
       data => {
-        this.infos = data.description;
-      },
-      error => {
-        console.log(error);
-    });
-
-    this.infoServices.update(2, info2_object).subscribe(
-      data => {
-        this.infos = data.description;
-      },
-      error => {
-        console.log(error);
-    });
-
-    this.infoServices.update(3, info3_object).subscribe(
-      data => {
-        this.infos = data.description;
+        this.infos = data;
+        console.log('DATA DEFAULT 1 UPDATED SUCCESSFULLY');
+        window.location.reload();
       },
       error => {
         console.log(error);
     });
   }
 
-  cancelChanges(){
+  updateDefaultData2(){
+    const id2 = (<HTMLInputElement>document.getElementById('data2')).id;
+    const info2 = (<HTMLInputElement>document.getElementById('data2')).value;
+    const info2object = {id:2, name:'AirQuality', description: info2};
+    // console.log(info2object);
+    // console.log(id2);
+
+    this.infoServices.update(2, info2object).subscribe(
+      data => {
+        this.infos = data;
+        console.log('DATA DEFAULT 2 UPDATED SUCCESSFULLY');
+        window.location.reload();
+      },
+      error => {
+        console.log(error);
+    });
+  }
+  updateDefaultData3(){
+    const id3 = (<HTMLInputElement>document.getElementById('data3')).id;
+    const info3 = (<HTMLInputElement>document.getElementById('data3')).value;
+    const info3object = {id:3, name:'Humidity', description: info3};
+    console.log(info3object);
+    console.log(id3);
+
+    this.infoServices.update(3, info3object).subscribe(
+      data => {
+        this.infos = data;
+        console.log('DATA DEFAULT 3 UPDATED SUCCESSFULLY');
+        window.location.reload();
+      },
+      error => {
+        console.log(error);
+    });
+  }
+
+  saveNewInfo() {
+    const newInfoName = (<HTMLInputElement>document.getElementById('newInfoName')).value;
+    const newInfoDescription = (<HTMLInputElement>document.getElementById('newInfoDescription')).value;
+    const newInfoObject = {name: newInfoName, description: newInfoDescription};
+
+    console.log(newInfoName);
+    console.log(newInfoDescription);
+    console.log(newInfoObject);
+
+    this.infoServices.create(newInfoObject).subscribe(
+      data => {
+        // this.infos = newInfoObject.description;
+        this.infos = data;
+        // this.infos = data.description;
+        console.log('DATA CREATED SUCCESSFULLY');
+        window.location.reload();
+      },
+      error => {
+        console.log(error);
+    });
+  }
+
+  reloadPage(){
     window.location.reload();
   }
 

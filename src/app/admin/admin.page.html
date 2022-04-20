@@ -1,13 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>ClimateRight - Admin Control Panel</ion-title>
-    <ion-title slot="end">
-      <ion-button (click)="saveData()">
-        <ion-icon name="log-out-outline"></ion-icon>
-        &nbsp;
-        LOGOUT
-      </ion-button>
-    </ion-title>
+    <div style="display:flex; margin: 0 auto; max-width: 730px;">
+      <ion-title>ClimateRight - Admin Control Panel</ion-title>
+      <ion-title style="text-align: end;">
+        <ion-button color="dark" routerLink="/home" routerDirection="forward">
+          <ion-icon name="log-out-outline"></ion-icon>
+          &nbsp;
+          LOGOUT
+        </ion-button>
+      </ion-title>
+    </div>
   </ion-toolbar>
 </ion-header>
 
@@ -15,7 +17,7 @@
 <ion-content class="ion-padding">
 
 <div class="container" style="display: flex; justify-content: center;">
-  <ion-list style="max-width: 700px;" >
+  <ion-list style="width: 700px;" >
     <h1
       style="
       text-transform: uppercase;
@@ -25,10 +27,10 @@
     <p style="margin-left: 10px;">Edit description for each information button</p>
     <div *ngFor="let info of infos" style="margin: 10px 10px;">
       <fieldset *ngIf="info.id === 1">
-        <h5>Temperature:</h5>
+        <h5>{{info.name}}:</h5>
         <p>{{info.description}}</p>
         <br>
-        <ion-button id="editTemperature" color="medium">
+        <ion-button id="edit{{info.name}}" color="medium">
           <ion-icon name="create">EDIT</ion-icon>
         </ion-button>
         <ion-button color="danger">
@@ -39,13 +41,13 @@
           <ng-template>
             <ion-content>
               <div class="container" style="margin: 30px;">
-                <h5>Temperature:</h5>
-                <textarea [(ngModel)]="info.description" id="{{info.id}}" cols="55" rows="6"></textarea>
+                <h5>{{info.name}}</h5>
+                <textarea [(ngModel)]="info.description" id="data{{info.id}}" cols="55" rows="6"></textarea>
                 <br>
-                <ion-button color="light" (click)="cancelChanges()">
+                <ion-button color="light" (click)="reloadPage()">
                   CANCEL
                 </ion-button>
-                <ion-button (click)="saveData()">
+                <ion-button (click)="updateDefaultData1()">
                   SAVE
                 </ion-button>
               </div>
@@ -61,8 +63,8 @@
         <ion-button id="editAirQuality" color="medium">
           <ion-icon name="create">EDIT</ion-icon>
         </ion-button>
-        <ion-button color="danger">
-          <ion-icon name="trash">DELETE</ion-icon>
+        <ion-button color="danger" style="cursor:not-allowed;">
+          <ion-icon name="trash" >DELETE</ion-icon>
         </ion-button>
         <!-- EDIT AIR QUALITY VIEW -->
         <ion-modal trigger="editAirQuality">
@@ -70,12 +72,12 @@
             <ion-content>
               <div class="container" style="margin: 30px;">
                 <h5>AirQuality:</h5>
-                <textarea [(ngModel)]="info.description" id="{{info.id}}" cols="55" rows="6"></textarea>
+                <textarea [(ngModel)]="info.description" id="data{{info.id}}" cols="55" rows="6"></textarea>
                 <br>
-                <ion-button color="light" (click)="cancelChanges()">
+                <ion-button color="light" (click)="reloadPage()">
                   CANCEL
                 </ion-button>
-                <ion-button (click)="saveData()">
+                <ion-button (click)="updateDefaultData2()">
                   SAVE
                 </ion-button>
               </div>
@@ -87,7 +89,7 @@
 
 
       <fieldset *ngIf="info.id === 3">
-        <h5>Humidity</h5>
+        <h5>Humidity:</h5>
         <p>{{info.description}}</p>
         <br>
         <ion-button id="editHumidity" color="medium">
@@ -103,12 +105,45 @@
             <ion-content>
               <div class="container" style="margin: 30px;">
                 <h5>Humidity:</h5>
-                <textarea [(ngModel)]="info.description" id="{{info.id}}" cols="55" rows="6"></textarea>
+                <textarea [(ngModel)]="info.description" id="data{{info.id}}" cols="55" rows="6"></textarea>
                 <br>
-                <ion-button color="light" (click)="cancelChanges()">
+                <ion-button color="light" (click)="reloadPage()">
                   CANCEL
                 </ion-button>
-                <ion-button (click)="saveData()">
+                <ion-button (click)="updateDefaultData3()">
+                  SAVE
+                </ion-button>
+              </div>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+
+      </fieldset>
+
+
+      <fieldset *ngIf="info.id >= 4">
+        <h5>{{info.name}}</h5>
+        <p>{{info.description}}</p>
+        <br>
+        <ion-button id="edit{{info.name}}" color="medium">
+          <ion-icon name="create">EDIT</ion-icon>
+        </ion-button>
+        <ion-button color="danger">
+          <ion-icon name="trash">DELETE</ion-icon>
+        </ion-button>
+
+        <!-- EDIT HUMIDITY VIEW -->
+        <ion-modal trigger="edit{{info.name}}">
+          <ng-template>
+            <ion-content>
+              <div class="container" style="margin: 30px;">
+                <h5>{{info.name}}</h5>
+                <textarea [(ngModel)]="info.description" id="data{{info.id}}" cols="55" rows="6"></textarea>
+                <br>
+                <ion-button color="light" (click)="reloadPage()">
+                  CANCEL
+                </ion-button>
+                <ion-button (click)="updateDefaultData4()">
                   SAVE
                 </ion-button>
               </div>
@@ -119,7 +154,7 @@
       </fieldset>
     </div>
     <br>
-    <ion-button id="addinfo" (click)="saveData()" style="margin-left: 10px;">
+    <ion-button id="addinfo" style="margin-left: 10px;">
       ADD INFORMATION
     </ion-button>
     <!-- ADD INFORMATION VIEW -->
@@ -128,16 +163,16 @@
         <ion-content>
           <div class="container" style="margin: 30px;">
             <p>Name:</p>
-            <input type="text" placeholder="Write name here">
+            <input id="newInfoName"type="text" placeholder="Write name here">
             <br>
             <br>
             <p>Description:</p>
-            <textarea placeholder="Write descripion here" cols="55" rows="6"></textarea>
+            <textarea id="newInfoDescription" placeholder="Write descripion here" cols="55" rows="6"></textarea>
             <br>
-            <ion-button color="light" (click)="cancelChanges()">
+            <ion-button color="light" (click)="reloadPage()">
               CANCEL
             </ion-button>
-            <ion-button (click)="saveData()">
+            <ion-button (click)="saveNewInfo()">
               ADD
             </ion-button>
           </div>
