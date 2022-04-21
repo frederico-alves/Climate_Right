@@ -51,7 +51,7 @@ export class AdminPage implements OnInit {
 editInfo(status){
   console.log(status);
   console.log(status.InfoName);
-  
+  // const statusID = parseInt(status.InfoId);
   status.isEdit = true;
   status.EditName = status.name;
   status.EditDescription = status.description;
@@ -75,16 +75,16 @@ editInfo(status){
 }
 
 
- /* updateInfo(statusRow){
+  updateInfo(statusRow){
 
     console.log("button clicked");
-    let status = {};
+    let status = [];
      status['name'] = statusRow.EditName;
      status['description']= statusRow.EditDescription;
 
- this.infoServices.update(statusRow.id, status).subscribe(
+ this.infoServices.update(this.id, status).subscribe(
   data => {
-    this.infos = data;
+    status = data as string[];
       console.log(data);
       //window.location.reload();
       //this.message = 'The tutorial was updated successfully!';
@@ -92,7 +92,7 @@ editInfo(status){
     error => {
       console.log(error);
     });
-   }*/
+   }
 
   retrieveInformations(): void {
     this.infoServices.getAll()
