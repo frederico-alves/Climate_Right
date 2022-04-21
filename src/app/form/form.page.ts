@@ -4,6 +4,7 @@ import { Button } from 'protractor';
 import { HttpClient } from '@angular/common/http';
 import { Information } from '../models/info.models';
 import { InformationService } from '../services/information.service';
+import { CheckboxControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -16,10 +17,12 @@ public genders= ['Male', 'Female', 'Non-Binary'];
 public zones =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'];
 infos: Information[];
 
+genderGroup: any;
 zoneGroup: any;
 temperatureGroup: any;
 airQualityGroup: any;
 humidityGroup: any;
+
 
 constructor(public http: HttpClient, private alertCtrl: AlertController,
   private toastController: ToastController, private infoServices: InformationService) { }
@@ -41,10 +44,11 @@ constructor(public http: HttpClient, private alertCtrl: AlertController,
         });
   }
 
-  consoleLogData(){
+PostDataAPI(){
     console.log('SUBMIT BUTTON WORKS');
     let YourHeaders = {'Content-Type':'application/json'};
 
+    let gender = this.genderGroup;
     let zone = this.zoneGroup;
     let Temperature = this.temperatureGroup;
     let Humidity = this.humidityGroup;
@@ -56,10 +60,6 @@ constructor(public http: HttpClient, private alertCtrl: AlertController,
     AirQuality = parseInt(AirQuality);
 
     let postData = {
-      // zone,
-      // Temperature,
-      // Humidity,
-      // AirQuality
       zone,
       Temperature,
       Humidity,
