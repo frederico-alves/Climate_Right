@@ -39,7 +39,7 @@
 <ion-button id="edit{{info.name}}" color="medium">
   <ion-icon name="create">EDIT</ion-icon>
 </ion-button>
-<ion-button color="danger">
+<ion-button color="danger" (click)="deleteItem(info.id)">
 <ion-icon name="trash">DELETE</ion-icon>
 </ion-button>
 </ion-card>

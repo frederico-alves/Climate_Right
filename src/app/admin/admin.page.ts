@@ -111,6 +111,17 @@ export class AdminPage implements OnInit {
     });
   }
 
+  deleteItem(id) {
+    this.infoServices.delete(id).subscribe(data => {
+      this.infos = data;
+      console.log('DATA DELETED SUCCESSFULLY');
+      window.location.reload();
+    },
+    error => {
+      console.log(error);
+  });
+  }
+
   reloadPage(){
     window.location.reload();
   }
