@@ -22,7 +22,7 @@ export class AdminPage implements OnInit {
       .subscribe(
         data => {
           this.infos = data;
-          console.log('DATA RECEIVED FROM MYSQL DATABASE:');
+          console.log('DATA RECEIVED FROM MYSQL DATABASE:', data);
         },
         error => {
           console.log(error);
@@ -30,12 +30,10 @@ export class AdminPage implements OnInit {
   }
 
   updateData(){
-
     // const infoData = (document.querySelectorAll('.info-data'));
     const infoData = (document.querySelectorAll('#data1'));
     console.log(infoData);
     // console.log(infoId);
-
   }
 
   updateDefaultData1(){

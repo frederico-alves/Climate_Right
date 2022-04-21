@@ -25,6 +25,30 @@
         Information Buttons
     </h1>
     <p style="margin-left: 10px;">Edit description for each information button</p>
+   
+
+<ion-list> 
+  <ion-item *ngFor="let info of infos">
+    <ion-card> 
+    <ion-card-header>
+     {{info.name}}
+    </ion-card-header>
+<ion-card-content>
+  {{info.description}}
+</ion-card-content>
+<ion-button id="edit{{info.name}}" color="medium">
+  <ion-icon name="create">EDIT</ion-icon>
+</ion-button>
+<ion-button color="danger">
+<ion-icon name="trash">DELETE</ion-icon>
+</ion-button>
+</ion-card>
+  </ion-item>
+</ion-list>
+ 
+
+
+  <!-- 
     <div *ngFor="let info of infos" style="margin: 10px 10px;">
       <fieldset *ngIf="info.id === 1">
         <h5>{{info.name}}:</h5>
@@ -34,10 +58,10 @@
           <ion-icon name="create">EDIT</ion-icon>
         </ion-button>
         <ion-button color="danger">
-          <ion-icon name="trash">DELETE</ion-icon>
+       <ion-icon name="trash">DELETE</ion-icon>
         </ion-button>
         <!-- EDIT TEMPERATURE VIEW -->
-        <ion-modal trigger="editTemperature">
+       <!--  <ion-modal trigger="editTemperature">
           <ng-template>
             <ion-content>
               <div class="container" style="margin: 30px;">
@@ -67,7 +91,7 @@
           <ion-icon name="trash" >DELETE</ion-icon>
         </ion-button>
         <!-- EDIT AIR QUALITY VIEW -->
-        <ion-modal trigger="editAirQuality">
+       <!--  <ion-modal trigger="editAirQuality">
           <ng-template>
             <ion-content>
               <div class="container" style="margin: 30px;">
@@ -85,10 +109,10 @@
           </ng-template>
         </ion-modal>
       </fieldset>
+ -->
 
 
-
-      <fieldset *ngIf="info.id === 3">
+     <!--  <fieldset *ngIf="info.id === 3">
         <h5>Humidity:</h5>
         <p>{{info.description}}</p>
         <br>
@@ -97,10 +121,10 @@
         </ion-button>
         <ion-button color="danger">
           <ion-icon name="trash">DELETE</ion-icon>
-        </ion-button>
+        </ion-button> -->
 
         <!-- EDIT HUMIDITY VIEW -->
-        <ion-modal trigger="editHumidity">
+       <!--  <ion-modal trigger="editHumidity">
           <ng-template>
             <ion-content>
               <div class="container" style="margin: 30px;">
@@ -130,10 +154,10 @@
         </ion-button>
         <ion-button color="danger">
           <ion-icon name="trash">DELETE</ion-icon>
-        </ion-button>
+        </ion-button> -->
 
         <!-- EDIT HUMIDITY VIEW -->
-        <ion-modal trigger="edit{{info.name}}">
+       <!--  <ion-modal trigger="edit{{info.name}}">
           <ng-template>
             <ion-content>
               <div class="container" style="margin: 30px;">
@@ -151,8 +175,8 @@
           </ng-template>
         </ion-modal>
 
-      </fieldset>
-    </div>
+      </fieldset> 
+    </div>   -->
     <br>
     <ion-button id="addinfo" style="margin-left: 10px;">
       ADD INFORMATION
