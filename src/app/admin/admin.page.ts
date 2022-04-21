@@ -34,10 +34,6 @@ export class AdminPage implements OnInit {
     const newInfoDescription = (<HTMLInputElement>document.getElementById('newInfoDescription')).value;
     const newInfoObject = {name: newInfoName, description: newInfoDescription};
 
-    console.log(newInfoName);
-    console.log(newInfoDescription);
-    console.log(newInfoObject);
-
     this.infoServices.create(newInfoObject).subscribe(
       data => {
         this.infos = data;
