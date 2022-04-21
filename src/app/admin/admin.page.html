@@ -27,26 +27,56 @@
     <p style="margin-left: 10px;">Edit description for each information button</p>
    
 
-<ion-list> 
-  <ion-item *ngFor="let info of infos">
-    <ion-card> 
+<ion-card *ngFor="let info of infos"> 
+  <span *ngIf="!info.isEdit; else elseBlock">
     <ion-card-header>
-     {{info.name}}
+      {{info.name}}
     </ion-card-header>
-<ion-card-content>
-  {{info.description}}
-</ion-card-content>
-<ion-button id="edit{{info.name}}" color="medium">
-  <ion-icon name="create">EDIT</ion-icon>
-</ion-button>
-<ion-button color="danger" (click)="deleteItem(info.id)">
-<ion-icon name="trash">DELETE</ion-icon>
-</ion-button>
+    <ion-card-content>
+      {{info.description}}
+    </ion-card-content>
+    <ion-button id="edit" color="medium" (click)="editInfo(info)">
+      <ion-icon name="create"  >EDIT</ion-icon>
+    </ion-button>
+    <ion-button color="danger" (click)="deleteItem(info.id)">
+      <ion-icon name="trash">DELETE</ion-icon>
+    </ion-button>
+  </span>
+ <!-- <ion-modal trigger="edit">  -->
+  <ng-template #elseBlock> 
+    <!-- <ion-content> -->
+     
+   <!--   <div class="container" style="margin: 30px;">  
+        <p>Name:</p>
+        <input id="editInfoName" type="text" placeholder="Write name here">
+        <br>
+        <br>
+        <p>Description:</p>
+        <textarea id="editInfoDescription" placeholder="Write descripion here" cols="55" rows="6"></textarea>
+        <br> -->
+      <ion-card-content>
+        <ion-item>
+          <ion-label><strong>Name</strong></ion-label><br>
+          <ion-input type="text" [(ngModel)]="info.EditName" placeholder="Enter New Name"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label><strong>Desctiption</strong></ion-label>
+          <ion-input type="text" [(ngModel)]="info.EditDescription" placeholder="Enter New Description"></ion-input>
+        </ion-item>
+    
+        <ion-button color="light" (click)="reloadPage()">
+          CANCEL
+        </ion-button>
+        <ion-button (click)="updateInfo(info)">
+          Edit
+        </ion-button>
+      
+    <!-- </ion-content> -->
+      </ion-card-content>
+  </ng-template>
+<!-- </ion-modal> -->
 </ion-card>
-  </ion-item>
-</ion-list>
- 
-
 
   <!-- 
     <div *ngFor="let info of infos" style="margin: 10px 10px;">

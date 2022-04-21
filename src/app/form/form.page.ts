@@ -56,10 +56,6 @@ constructor(public http: HttpClient, private alertCtrl: AlertController,
     AirQuality = parseInt(AirQuality);
 
     let postData = {
-      // zone,
-      // Temperature,
-      // Humidity,
-      // AirQuality
       zone,
       Temperature,
       Humidity,
