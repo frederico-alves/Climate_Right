@@ -35,9 +35,28 @@
       <ion-button id="edit{{info.name}}" color="medium">
         <ion-icon name="create">EDIT</ion-icon>
       </ion-button>
-      <ion-button color="danger" (click)="deleteItem(info.id)">
+      <ion-button   id="{{info.id}}"  color="danger">
         <ion-icon name="trash">DELETE</ion-icon>
       </ion-button>
+
+       <!-- Delete confirmation view -->
+       
+      <ion-modal trigger="{{info.id}}">
+        <ng-template>
+          <ion-content>
+            <div class="container" style="margin: 30px;"> 
+        <h1> Are you sure you want to delete {{info.name}}?</h1>
+        <br><br>
+        <ion-button color="light" (click)="reloadPage()">
+          Cancel
+        </ion-button>
+        <ion-button  (click)="deleteItem(info.id)">
+          Yes
+        </ion-button>
+      </div>
+      </ion-content>
+    </ng-template>
+      </ion-modal>
 
       <!-- EDIT VIEW -->
       <ion-modal trigger="edit{{info.name}}">
