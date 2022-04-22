@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 import { Information } from '../models/info.models';
 import { InformationService } from '../services/information.service';
 
@@ -10,7 +11,7 @@ import { InformationService } from '../services/information.service';
 export class AdminPage implements OnInit {
 
   infos: Information[];
-  constructor(private infoServices: InformationService) { }
+  constructor(private infoServices: InformationService, private alertCtrl: AlertController) { }
 
 
   ngOnInit(): void {
