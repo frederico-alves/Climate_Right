@@ -159,19 +159,22 @@
   <ion-item>
   <ion-label>Gender</ion-label>
   <ion-select [(ngModel)]="genderGroup" placeholder="Select One">
-    <ion-select-option *ngFor="let gender of genders"> {{gender}}</ion-select-option>
+    <ion-select-option *ngFor="let gender of genders">{{gender}}</ion-select-option>
   </ion-select>
   </ion-item>
   <ion-item>
     <ion-label>Zone</ion-label>
     <ion-select [(ngModel)]="zoneGroup" placeholder="Select One">
-      <ion-select-option *ngFor="let zone of zones" > {{zone}}</ion-select-option>
+      <ion-select-option *ngFor="let zone of zones" >{{zone}}</ion-select-option>
     </ion-select>
   </ion-item>
 </ion-list>
 
-  <ion-button class="center-button submit-button" routerLink="/home" routerDirection="forward"
-      slot="" ion-button (click)="PostDataAPI()" (click)="showMyToast()">
+  <ion-button
+    class="center-button submit-button"
+    routerLink="/home" routerDirection="forward"
+    ion-button (click)="PostDataAPI()"
+    (click)="showMyToast()">
       SUBMIT
   </ion-button>
 

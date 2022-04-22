@@ -13,15 +13,15 @@ import { CheckboxControlValueAccessor } from '@angular/forms';
 })
 export class FormPage implements OnInit {
 
-public genders= ['Male', 'Female', 'Non-Binary'];
+public genders = ['Male', 'Female', 'Non-Binary'];
 public zones =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'];
 infos: Information[];
 
-genderGroup: any;
 zoneGroup: any;
 temperatureGroup: any;
 airQualityGroup: any;
 humidityGroup: any;
+genderGroup: any;
 
 
 constructor(public http: HttpClient, private alertCtrl: AlertController,
@@ -48,22 +48,35 @@ PostDataAPI(){
     console.log('SUBMIT BUTTON WORKS');
     let YourHeaders = {'Content-Type':'application/json'};
 
-    let gender = this.genderGroup;
     let zone = this.zoneGroup;
     let Temperature = this.temperatureGroup;
     let Humidity = this.humidityGroup;
     let AirQuality = this.airQualityGroup;
+    let Identifier = this.genderGroup;
 
     zone = parseInt(zone);
     Temperature = parseInt(Temperature);
     Humidity = parseInt(Humidity);
     AirQuality = parseInt(AirQuality);
 
+    if (Identifier === 'Male'){
+      Identifier = 'M';
+    }
+    if (Identifier === 'Female'){
+      Identifier = 'F';
+    }
+    if (Identifier === 'Non-Binary'){
+      Identifier = 'O';
+    }
+
+    console.log(Identifier);
+
     let postData = {
       zone,
       Temperature,
       Humidity,
-      AirQuality
+      AirQuality,
+      Identifier
     }
 
     console.log(postData);

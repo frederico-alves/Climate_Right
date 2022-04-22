@@ -7,6 +7,23 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  passwordInput: any;
+  usernameInput: any;
+
   constructor() {}
+
+  reloadPage(){
+    window.location.reload();
+  }
+
+  login(){
+    if(this.passwordInput === '123')
+    {
+    window.location.href = '/admin';
+    }
+    else {
+      window.location.href = '/home';
+    }
+  }
 
 }
