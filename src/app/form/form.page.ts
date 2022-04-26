@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Information } from '../models/info.models';
 import { InformationService } from '../services/information.service';
 import { CheckboxControlValueAccessor } from '@angular/forms';
-import { NgDragDropModule } from 'ng-drag-drop';
+
 
 @Component({
   selector: 'app-form',
