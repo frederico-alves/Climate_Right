@@ -1,20 +1,11 @@
 <ion-content>
   <div class="background--picture">
-    <div style="display:flex; justify-content: flex-end; margin-top: 10px; margin-right: 10px; padding-top: 10px;">
-      <a href="#" style="color: white;">ADMIN</a>
-    </div>
+
 
     <div class="logo" style="background-image: url('../../assets/logo.svg');"></div>
     <p>Climate Right is a personalised ventilation system designed to maximize personal comfort in a controlled indoor climate environment. In order to provide the best climate personalized for you please click START</p>
     <ion-button color="light" class="center-button" routerLink="/form" routerDirection="forward"><ion-icon name="arrow-forward-circle"></ion-icon>&nbsp;START</ion-button>
     <br>
-    <ion-button
-      color="light"
-      class="center-button"
-      id="loginTrigger">
-        <ion-icon name="person-circle"></ion-icon>
-        &nbsp;LOGIN
-    </ion-button>
     <ion-modal trigger="loginTrigger">
       <ng-template>
         <ion-content>
@@ -36,5 +27,11 @@
         </ion-content>
       </ng-template>
     </ion-modal>
+
+    <a id="loginTrigger" class="float" style="color: white;">
+      <ion-icon style="font-size:20px; margin-bottom: -1px;" size="small" name="lock-closed-outline"></ion-icon>
+    ADMIN
+    </a>
+
   </div>
 </ion-content>

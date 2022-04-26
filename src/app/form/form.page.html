@@ -19,27 +19,27 @@
 <fieldset id="group1">
   <div class='options'>
     <label>
-      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="1">
+      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="6">
       <span class='clickable clickable--first'></span>
     </label>
     <label>
-      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="2">
+      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="5">
       <span class='clickable'></span>
-    </label>
-    <label>
-      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="3">
-        <span class='clickable'></span>
     </label>
     <label>
       <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="4">
         <span class='clickable'></span>
     </label>
     <label>
-      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="5">
+      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="3">
         <span class='clickable'></span>
     </label>
     <label>
-      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="6">
+      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="2">
+        <span class='clickable'></span>
+    </label>
+    <label>
+      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="1">
         <span class='clickable clickable--last'></span>
     </label>
   </div>
@@ -47,7 +47,7 @@
 </div><!-- GROUP 1 USER INPUT -->
 
 <div class="info-section">
-  <ion-icon (click) ="presentAlertSheetTemperature()"  size="large" name="information" style="cursor: pointer;">  </ion-icon>
+  <ion-icon (click) ="presentAlertSheetTemperature()" class="ion-icon-info" size="large" name="information" style="cursor: pointer;">  </ion-icon>
 </div>
 
 </div> <!-- GROUP 1 CONTAINER -->
@@ -66,15 +66,11 @@
 <fieldset id="group2">
   <div class='options'>
     <label>
-      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="1">
+      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="6">
         <span class='clickable clickable--first'></span>
     </label>
     <label>
-      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="2">
-        <span class='clickable'></span>
-    </label>
-    <label>
-      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="3">
+      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="5">
         <span class='clickable'></span>
     </label>
     <label>
@@ -82,11 +78,15 @@
         <span class='clickable'></span>
     </label>
     <label>
-      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="5">
+      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="3">
         <span class='clickable'></span>
     </label>
     <label>
-      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="6">
+      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="2">
+        <span class='clickable'></span>
+    </label>
+    <label>
+      <input [(ngModel)]="airQualityGroup" name="group-airQuality" type='radio' value="1">
         <span class='clickable clickable--last'></span>
 
     </label>
@@ -95,7 +95,7 @@
 </div> <!-- GROUP 2 USER INPUT -->
 
 <div class="info-section">
-  <ion-icon (click) ="presentAlertSheetAirQuality()"  size="large" name="information" style="cursor: pointer;">  </ion-icon>
+  <ion-icon (click) ="presentAlertSheetAirQuality()" class="ion-icon-info" size="large" name="information" style="cursor: pointer;">  </ion-icon>
 </div>
 
 </div> <!-- GROUP 2 CONTAINER -->
@@ -149,7 +149,7 @@
 
 
   <div class="info-section">
-    <ion-icon (click) ="presentAlertSheetHumidity()"  size="large" name="information" style="cursor: pointer;">  </ion-icon>
+    <ion-icon (click) ="presentAlertSheetHumidity()" class="ion-icon-info" size="large" name="information" style="cursor: pointer;">  </ion-icon>
   </div>
 
 </div> <!-- GROUP 3 CONTAINER -->
@@ -170,12 +170,50 @@
   </ion-item>
 </ion-list>
 
+<div style="display: flex; justify-content: center;">
+
+
   <ion-button
-    class="center-button submit-button"
+    color="light"
+    class="submit-button"
+    routerLink="/home" routerDirection="forward"
+    style="margin-right: 18px;">
+      CANCEL
+  </ion-button>
+
+  <ion-button
+    class="submit-button"
+    style="margin-left: 18px;"
     routerLink="/home" routerDirection="forward"
     ion-button (click)="PostDataAPI()"
     (click)="showMyToast()">
       SUBMIT
   </ion-button>
+
+  <!-- DRAG AND DROP -->
+  <ion-modal trigger="drag&drop">
+    <ng-template>
+      <ion-content>
+        <div class="container" style="margin: 30px;">
+          <h1>DRAG AND DROP</h1>
+          <ul>
+            <li draggable>Coffee</li>
+            <li draggable>Tea</li>
+            <li draggable>Milk</li>
+          </ul>
+          <div droppable>
+            <p>Drop items here</p>
+          </div>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</div>
+
+<a id="drag&drop" class="float" style="color: black;">
+  <ion-icon style="font-size:20px; margin-bottom: -5px;" name="help-circle-outline"></ion-icon>
+  HELP
+</a>
 
 </ion-content>
