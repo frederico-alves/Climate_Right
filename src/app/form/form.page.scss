@@ -188,27 +188,74 @@ fieldset {
 }
 
 // DRAG AND DROP
-.fixed-box {
-  width: 100%;
-  background: white;
-  height: 160px;
-  z-index: 11;
-}
-
-.drop-area {
-  border: 2px dashed #ff00ff;
-  margin: 2px;
-  width: calc(50% - 4px);
-  align-items: center;
-  height: 150px;
-  display: inline-flex;
+.draggable-elements {
+  display: flex;
   justify-content: center;
-  user-select: none;
-  background: white;
+  margin: 2rem;
 }
 
-.item-group {
-  margin-top: 160px;
+.droppable-elements {
+  display: flex;
+}
+.draggable {
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  margin: 0rem 0.5rem;
+  cursor: move;
+  transition: opacity 0.2s;
+}
+.draggable:hover {
+  opacity: 0.5;
+}
+.droppable {
+  height: 6.5rem;
+  width: 6.5rem;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  background-color: #fff;
+  border: 3px dashed #111;
+  transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
+}
+.droppable span {
+  font-size: 1.25rem;
+  pointer-events: none; /* The element is never the target of pointer events */
+}
+
+/* Drag and Drop Related Styling */
+
+.droppable.droppable-hover {
+  /* background-color: #bee3f0; */
+  border-width: 5px;
+  transform: scale(1.1);
+}
+.droppable.dropped {
+  border-style: solid;
+  color: #fff;
+}
+.droppable.dropped span {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+.droppable.dropped i {
+  pointer-events: none;
+}
+.draggable.dragged {
+  user-select: none;
+  opacity: 0.1;
+  cursor: default;
+}
+.draggable.dragged:hover {
+  opacity: 0.1;
 }
 
 // RESPONSIVE

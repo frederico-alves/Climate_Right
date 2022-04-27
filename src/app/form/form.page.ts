@@ -12,18 +12,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
   templateUrl: './form.page.html',
   styleUrls: ['./form.page.scss'],
 })
-export class FormPage implements OnInit, AfterViewInit {
-
-teamBlue: [];
-teamRed = [];
-myArray = Array.from(Array(30).keys());
-contentScrollActive = true;
-gestureArray: Gesture[] = [];
-
-// @ViewChild('dopzoneA') dropA: ElementRef;
-// @ViewChild('dopzoneB') dropB: ElementRef;
-
-// @ViewChildren(IonItem, { read: ElementRef}) items: QueryList<ElementRef>;
+export class FormPage implements OnInit {
 
 public genders = ['Male', 'Female', 'Non-Binary'];
 public zones =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'];
@@ -35,7 +24,6 @@ airQualityGroup: any;
 humidityGroup: any;
 genderGroup: any;
 
-
 constructor(
   public http: HttpClient,
   private alertCtrl: AlertController,
@@ -46,44 +34,6 @@ constructor(
   ngOnInit(): void {
     this.retrieveInformations();
   }
-
-  ngAfterViewInit() {
-  //   this.updateGestures();
-  }
-
-  // updateGestures() {
-  //   this.gestureArray.map(gesture => gesture.destroy());
-  //   this.gestureArray = [];
-
-  //   const arr = this.items.toArray();
-  //   console.log('arr ', arr);
-  //   for (let i = 0; i < arr.length; i++) {
-  //     const oneItem = arr[i];
-
-  //     const drag = this.gestureCtrl.create({
-  //       el: oneItem.nativeElement,
-  //       threshold: 0,
-  //       gestureName: 'drag',
-  //       onStart: ev => {
-  //         oneItem.nativeElement.style.transition = '';
-  //         oneItem.nativeElement.style.opacity = '0.8';
-  //         oneItem.nativeElement.style.fontWeight = 'bold';
-  //       },
-  //       onMove: ev => {
-  //         oneItem.nativeElement.style.transform = `translate(${ev.deltaX}px, ${ev.deltaY}px)`;
-  //       },
-  //       onEnd: ev => {
-
-  //       }
-  //     });
-  //     drag.enable();
-  //     this.gestureArray.push(drag);
-  //   }
-
-  //   this.items.changes.subscribe(res => {
-  //     console.log('items changed: ', res);
-  //   });
-  // };
 
   retrieveInformations(): void {
     this.infoServices.getAll()
@@ -174,6 +124,68 @@ PostDataAPI(){
 
     });
     await toast.present();
+  }
+
+  dragdrop(){
+    console.log('dragdrop1');
+    const draggableElements = document.querySelectorAll('.draggable');
+    const droppableElements = document.querySelectorAll('.droppable');
+
+    draggableElements.forEach(elem => {
+      elem.addEventListener('dragstart', dragStart);
+    });
+
+    droppableElements.forEach(elem => {
+      elem.addEventListener('dragenter', dragEnter);
+      elem.addEventListener('dragover', dragOver);
+      elem.addEventListener('dragleave', dragLeave);
+      elem.addEventListener('drop', drop);
+    });
+
+    // Drag and Drop Functions
+
+    //Events fired on the drag target
+
+    function dragStart(event) {
+      event.dataTransfer.setData('text', event.target.id);
+    }
+
+    //Events fired on the drop target
+
+    function dragEnter(event) {
+      if(!event.target.classList.contains('dropped')) {
+        event.target.classList.add('droppable-hover');
+      }
+    }
+
+    function dragOver(event) {
+      if(!event.target.classList.contains('dropped')) {
+        event.preventDefault(); // Prevent default to allow drop
+      }
+    }
+
+    function dragLeave(event) {
+      if(!event.target.classList.contains('dropped')) {
+        event.target.classList.remove('droppable-hover');
+      }
+    }
+
+    function drop(event) {
+      event.preventDefault();
+      event.target.classList.remove('droppable-hover');
+      const draggableElementData = event.dataTransfer.getData('text');
+      const droppableElementData = event.target.getAttribute('data-draggable-id');
+      const isCorrectMatching = draggableElementData === droppableElementData;
+      if(isCorrectMatching) {
+        const draggableElement = document.getElementById(draggableElementData);
+        event.target.classList.add('dropped');
+
+        event.target.style.backgroundColor = window.getComputedStyle(draggableElement).color;
+        draggableElement.classList.add('dragged');
+        draggableElement.setAttribute('draggable', 'false');
+        event.target.insertAdjacentHTML('afterbegin', `<i class="fas fa-${draggableElementData}"></i>`);
+      }
+    }
   }
 
 }

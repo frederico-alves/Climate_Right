@@ -193,25 +193,29 @@
   <!-- DRAG AND DROP -->
   <ion-modal trigger="drag&drop">
     <ng-template>
-      <ion-content [scrollY]="contentScrollActive">
-        <div slot="fixed" class="fixed-box">
-
-          <div class="drop-area" #dropzoneA>
-            <b>Team Blue:</b>
-            {{ teamBlue | json }}
-          </div>
-
-          <div class="drop-area" #dropzoneB>
-            <b>Team Red:</b>
-            {{ teamRed | json }}
-          </div>
-        </div>
-
-        <div class="item-group">
-          <ion-item *ngFor="let i of myArray">
-            Player {{ i }}
-          </ion-item>
-        </div>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Edutainment</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="closeModal()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        </ion-header>
+      <ion-content>
+        <section style="margin: 20px;">
+          <p>Drag and drop the right terminology with the matching parameters used on the Climate Right app.</p>
+          <ion-button (click)="dragdrop()">CLICK HERE TO START</ion-button>
+        </section>
+        <section class="draggable-elements">
+          <i class="fas fa-cat draggable" draggable="true" style="color: #ff6384;" id="cat"></i>
+          <i class="fas fa-dove draggable" draggable="true" style="color: #ffce56;" id="dove"></i>
+          <i class="fas fa-frog draggable" draggable="true" style="color: #4bc0c0;" id="frog"></i>
+        </section>
+        <section class="droppable-elements">
+          <div class="droppable" data-draggable-id="frog"><span>Temperature</span></div>
+          <div class="droppable" data-draggable-id="dove"><span>Air Quality</span></div>
+          <div class="droppable" data-draggable-id="cat"><span>Humidity</span></div>
+        </section>
       </ion-content>
     </ng-template>
   </ion-modal>
@@ -229,3 +233,5 @@
 </a>
 
 </ion-content>
+
+
