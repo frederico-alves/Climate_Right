@@ -1,18 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { ActionSheetController, AlertController, ToastController } from '@ionic/angular';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { ActionSheetController, AlertController, Gesture, GestureController, IonItem, ToastController } from '@ionic/angular';
 import { Button } from 'protractor';
 import { HttpClient } from '@angular/common/http';
 import { Information } from '../models/info.models';
 import { InformationService } from '../services/information.service';
 import { CheckboxControlValueAccessor } from '@angular/forms';
-
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.page.html',
   styleUrls: ['./form.page.scss'],
 })
-export class FormPage implements OnInit {
+export class FormPage implements OnInit, AfterViewInit {
+
+teamBlue: [];
+teamRed = [];
+myArray = Array.from(Array(30).keys());
+contentScrollActive = true;
+gestureArray: Gesture[] = [];
+
+// @ViewChild('dopzoneA') dropA: ElementRef;
+// @ViewChild('dopzoneB') dropB: ElementRef;
+
+// @ViewChildren(IonItem, { read: ElementRef}) items: QueryList<ElementRef>;
 
 public genders = ['Male', 'Female', 'Non-Binary'];
 public zones =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'];
@@ -25,12 +36,54 @@ humidityGroup: any;
 genderGroup: any;
 
 
-constructor(public http: HttpClient, private alertCtrl: AlertController,
-  private toastController: ToastController, private infoServices: InformationService) { }
+constructor(
+  public http: HttpClient,
+  private alertCtrl: AlertController,
+  private toastController: ToastController,
+  private infoServices: InformationService,
+  private gestureCtrl: GestureController) { }
 
   ngOnInit(): void {
     this.retrieveInformations();
   }
+
+  ngAfterViewInit() {
+  //   this.updateGestures();
+  }
+
+  // updateGestures() {
+  //   this.gestureArray.map(gesture => gesture.destroy());
+  //   this.gestureArray = [];
+
+  //   const arr = this.items.toArray();
+  //   console.log('arr ', arr);
+  //   for (let i = 0; i < arr.length; i++) {
+  //     const oneItem = arr[i];
+
+  //     const drag = this.gestureCtrl.create({
+  //       el: oneItem.nativeElement,
+  //       threshold: 0,
+  //       gestureName: 'drag',
+  //       onStart: ev => {
+  //         oneItem.nativeElement.style.transition = '';
+  //         oneItem.nativeElement.style.opacity = '0.8';
+  //         oneItem.nativeElement.style.fontWeight = 'bold';
+  //       },
+  //       onMove: ev => {
+  //         oneItem.nativeElement.style.transform = `translate(${ev.deltaX}px, ${ev.deltaY}px)`;
+  //       },
+  //       onEnd: ev => {
+
+  //       }
+  //     });
+  //     drag.enable();
+  //     this.gestureArray.push(drag);
+  //   }
+
+  //   this.items.changes.subscribe(res => {
+  //     console.log('items changed: ', res);
+  //   });
+  // };
 
   retrieveInformations(): void {
     this.infoServices.getAll()
@@ -122,8 +175,6 @@ PostDataAPI(){
     });
     await toast.present();
   }
-
-
 
 }
 

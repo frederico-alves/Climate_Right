@@ -187,6 +187,29 @@ fieldset {
   margin-bottom: 40px;
 }
 
+// DRAG AND DROP
+.fixed-box {
+  width: 100%;
+  background: white;
+  height: 160px;
+  z-index: 11;
+}
+
+.drop-area {
+  border: 2px dashed #ff00ff;
+  margin: 2px;
+  width: calc(50% - 4px);
+  align-items: center;
+  height: 150px;
+  display: inline-flex;
+  justify-content: center;
+  user-select: none;
+  background: white;
+}
+
+.item-group {
+  margin-top: 160px;
+}
 
 // RESPONSIVE
 
