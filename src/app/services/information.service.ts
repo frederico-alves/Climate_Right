@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Information } from '../models/info.models';
 
-const baseUrl = 'http://localhost:8080/api/information';
+//const baseUrl = 'http://localhost:8080/api/information';
+const baseUrl= 'https://climate-right-backend.herokuapp.com/api/information';
 @Injectable({
   providedIn: 'root'
 })
