@@ -1,0 +1,116 @@
+// DRAG AND DROP
+.draggable-elements {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.droppable-elements {
+  display: flex;
+}
+.draggable {
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  margin: 0rem 0.5rem;
+  cursor: move;
+  transition: opacity 0.2s;
+}
+.draggable:hover {
+  opacity: 0.5;
+}
+.droppable {
+  height: 6.5rem;
+  width: 6.5rem;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+  background-color: #fff;
+  border: 3px dashed #111;
+  transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
+}
+.droppable span {
+  font-size: 1.25rem;
+  pointer-events: none; /* The element is never the target of pointer events */
+}
+
+/* Drag and Drop Related Styling */
+
+.droppable.droppable-hover {
+  /* background-color: #bee3f0; */
+  border-width: 5px;
+  transform: scale(1.1);
+}
+.droppable.dropped {
+  border-style: solid;
+  color: #fff;
+}
+.droppable.dropped span {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+.droppable.dropped i {
+  pointer-events: none;
+}
+.draggable.dragged {
+  user-select: none;
+  opacity: 0.1;
+  cursor: default;
+}
+.draggable.dragged:hover {
+  opacity: 0.1;
+}
+
+.container-1 {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+// 2 TRIAL
+
+.container-2 {
+  font-family: "Trebuchet MS", sans-serif;
+  display: flex;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.column{
+  flex-basis: 20%;
+  background: #ddd;
+  height: 300px;
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.column-options {
+  background-color: white;
+  border: none;
+}
+.column h1{
+  text-align: center;
+  font-size: 22px;
+}
+.item{
+  background: #fff;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 3px;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+.invisible{
+  display: none;
+}
