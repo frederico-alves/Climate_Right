@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Information } from '../models/info.models';
 
 //const baseUrl = 'http://localhost:8080/api/information';
-const baseUrl= 'https://climate-right-backend.herokuapp.com/api/information';
+const baseUrl= 'https://climate-right.azurewebsites.net/api/information';
 @Injectable({
   providedIn: 'root'
 })
