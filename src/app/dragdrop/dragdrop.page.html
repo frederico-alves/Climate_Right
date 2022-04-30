@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Drag and Drop - Edutainment
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section style="text-align: center;">
+    <p>Drag and drop the right terminology with the matching parameters used on the Climate Right app:</p>
+  </section>
+  <div class="container-2">
+    <div class="column column-options">
+        <h1> </h1>
+        <div class="item" draggable="true">Very Hot</div>
+        <div class="item" draggable="true">Very Cold</div>
+        <div class="item" draggable="true">Very Energetic</div>
+        <div class="item" draggable="true">Very Tired</div>
+        <div class="item" draggable="true">Very Muggy</div>
+        <div class="item" draggable="true">Very Dry</div>
+    </div>
+    <div class="column">
+        <h1>Temperature:</h1>
+    </div>
+    <div class="column">
+        <h1>Air Quality:</h1>
+    </div>
+    <div class="column">
+        <h1>Humidity:</h1>
+    </div>
+</div>
+
+<ion-button
+  (click)="reloadPage()"
+  color="light"
+  class="submit-button"
+  style="
+    position: absolute;
+    right: 120px;
+    bottom: 10px;
+    margin-right: 18px;">
+    RESTART
+</ion-button>
+
+<ion-button
+  color="primary"
+  class="submit-button"
+  routerLink="/form"
+  routerLinkActive="active"
+  style="
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    margin-right: 18px;">
+    GO BACK
+</ion-button>
+
+</ion-content>

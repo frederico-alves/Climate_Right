@@ -155,7 +155,7 @@
 </div> <!-- GROUP 3 CONTAINER -->
 </section>
 
-<ion-list>
+<div style="display: flex; justify-content: center;">
   <ion-item>
   <ion-label>Gender</ion-label>
   <ion-select [(ngModel)]="genderGroup" placeholder="Select One">
@@ -168,7 +168,7 @@
       <ion-select-option *ngFor="let zone of zones" >{{zone}}</ion-select-option>
     </ion-select>
   </ion-item>
-</ion-list>
+</div>
 
 <div style="display: flex; justify-content: center;">
 
@@ -190,30 +190,21 @@
       SUBMIT
   </ion-button>
 
-  <!-- DRAG AND DROP -->
-  <ion-modal trigger="drag&drop">
-    <ng-template>
-      <ion-content>
-        <div class="container" style="margin: 30px;">
-          <h1>DRAG AND DROP</h1>
-          <ul>
-            <li draggable>Coffee</li>
-            <li draggable>Tea</li>
-            <li draggable>Milk</li>
-          </ul>
-          <div droppable>
-            <p>Drop items here</p>
-          </div>
-        </div>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
-
 </div>
 
-<a id="drag&drop" class="float" style="color: black;">
+<a
+routerLinkActive="active"
+routerLink="/dragdrop"
+  class="float"
+  style="
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    padding: 8px;">
   <ion-icon style="font-size:20px; margin-bottom: -5px;" name="help-circle-outline"></ion-icon>
   HELP
 </a>
 <button> Hello</button>
 </ion-content>
+
+
