@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Information } from '../models/info.models';
 import { InformationService } from '../services/information.service';
 import { CheckboxControlValueAccessor } from '@angular/forms';
-import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 @Component({
   selector: 'app-form',
@@ -86,7 +86,7 @@ PostDataAPI(){
     console.log(postData);
 
     // POSTING DATA IN THE API METHOD
-    this.http.post('https://mentals-shower.herokuapp.com', postData, {headers: YourHeaders})
+    this.http.post('https://climate-right.azurewebsites.net/input', postData, {headers: YourHeaders})
       .subscribe(data => {
         console.log(data);
         console.log('DATA POSTED IN THE API');
