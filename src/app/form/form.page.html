@@ -19,7 +19,7 @@
 <fieldset id="group1">
   <div class='options'>
     <label>
-      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="6">
+      <input [(ngModel)]="temperatureGroup" name="group-temperature" type='radio' value="6" required>
       <span class='clickable clickable--first'></span>
     </label>
     <label>
@@ -184,9 +184,8 @@
   <ion-button
     class="submit-button"
     style="margin-left: 18px;"
-    routerLink="/home" routerDirection="forward"
-    ion-button (click)="PostDataAPI()"
-    (click)="showMyToast()">
+
+    ion-button (click)="PostDataAPI()">
       SUBMIT
   </ion-button>
 

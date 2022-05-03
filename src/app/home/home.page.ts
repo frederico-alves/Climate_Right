@@ -23,17 +23,27 @@ export class HomePage {
     window.location.href = '/admin';
     }
     else {
-      //window.location.href = '/home';
-      this.showMyToast();
+      this.showLoginErrorToast();
     }
   }
 
-  async showMyToast() {
+  async showLoginErrorToast() {
     const toast = await this.toastController.create({
-      message: 'You password or username is inccorect',
-      duration: 8000,
-      position: 'middle'
-
+      header: 'INVALID CREDENTIAL',
+      message: 'Your password or username is incorrect',
+      duration: 9000,
+      position: 'top',
+      cssClass: 'toast-error-class',
+      buttons: [
+       {
+          side: 'end',
+          text: 'Close',
+          role: 'cancel',
+          handler: () => {
+            console.log('');
+          }
+        }
+      ]
     });
     await toast.present();
   }

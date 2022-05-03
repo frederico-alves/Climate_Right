@@ -7,6 +7,7 @@ import { InformationService } from '../services/information.service';
 import { CheckboxControlValueAccessor } from '@angular/forms';
 import { Input } from '../models/input.model';
 import { InputService } from '../services/input.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -33,7 +34,8 @@ constructor(
   private toastController: ToastController,
   private infoServices: InformationService,
   private inputServices: InputService,
-  private gestureCtrl: GestureController) { }
+  private gestureCtrl: GestureController,
+  private router: Router) { }
 
   ngOnInit(): void {
     this.retrieveInformations();
@@ -87,7 +89,7 @@ PostDataAPI(){
       Identifier
     }
 
-  
+
     console.log(postData);
 
     // POSTING DATA IN THE API METHOD
@@ -95,8 +97,11 @@ PostDataAPI(){
       .subscribe(data => {
         console.log(data);
         console.log('Input POSTED IN THE API');
+        this.showSuccessToast();
+        this.forwardHomepage();
        }, error => {
         console.log(error);
+        this.showSubmitErrorToast();
       });
   }
 
@@ -122,14 +127,50 @@ PostDataAPI(){
     });
     await alert.present();
   }
-  async showMyToast() {
+  async showSuccessToast() {
     const toast = await this.toastController.create({
-      message: 'Your settings have been saved',
-      duration: 5000,
-      position: 'bottom'
-
+      header: 'SUBMITTED',
+      message: 'Thank you, your settings have been registered.',
+      duration: 9000,
+      position: 'top',
+      cssClass: 'toast-success-class',
+      buttons: [
+       {
+          side: 'end',
+          text: 'Close',
+          role: 'cancel',
+          handler: () => {
+            console.log('');
+          }
+        }
+      ]
     });
     await toast.present();
+  }
+
+  async showSubmitErrorToast() {
+    const toast = await this.toastController.create({
+      header: 'ALL THE FIELDS ARE REQUIRED',
+      message: 'Please select all the fields before submitting.',
+      duration: 9000,
+      position: 'top',
+      cssClass: 'toast-error-class',
+      buttons: [
+       {
+          side: 'end',
+          text: 'Close',
+          role: 'cancel',
+          handler: () => {
+            console.log('');
+          }
+        }
+      ]
+    });
+    await toast.present();
+  }
+
+  forwardHomepage(){
+    this.router.navigate(['/home']);
   }
 
   dragdrop(){
