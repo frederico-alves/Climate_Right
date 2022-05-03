@@ -5,6 +5,7 @@ import { Information } from '../models/info.models';
 
 //const baseUrl = 'http://localhost:8080/api/information';
 const baseUrl= 'https://climate-right.azurewebsites.net/information';
+
 @Injectable({
   providedIn: 'root'
 })

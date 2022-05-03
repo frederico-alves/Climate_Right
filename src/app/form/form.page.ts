@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { Information } from '../models/info.models';
 import { InformationService } from '../services/information.service';
 import { CheckboxControlValueAccessor } from '@angular/forms';
+import { Input } from '../models/input.model';
+import { InputService } from '../services/input.service';
 
 
 @Component({
@@ -17,6 +19,7 @@ export class FormPage implements OnInit {
 public genders = ['Male', 'Female', 'Non-Binary'];
 public zones =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'];
 infos: Information[];
+inputs: Input[];
 
 zoneGroup: any;
 temperatureGroup: any;
@@ -29,6 +32,7 @@ constructor(
   private alertCtrl: AlertController,
   private toastController: ToastController,
   private infoServices: InformationService,
+  private inputServices: InputService,
   private gestureCtrl: GestureController) { }
 
   ngOnInit(): void {
@@ -83,17 +87,19 @@ PostDataAPI(){
       Identifier
     }
 
+  
     console.log(postData);
 
     // POSTING DATA IN THE API METHOD
-    this.http.post('https://climate-right.azurewebsites.net/input', postData, {headers: YourHeaders})
+    this.inputServices.create( postData)
       .subscribe(data => {
         console.log(data);
-        console.log('DATA POSTED IN THE API');
+        console.log('Input POSTED IN THE API');
        }, error => {
         console.log(error);
       });
   }
+
 
   async presentAlertSheetTemperature(){
     const alert = await this.alertCtrl.create({

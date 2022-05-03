@@ -24,8 +24,6 @@ export class AdminPage implements OnInit {
 
   }
 
- 
-
   retrieveInformations(): void {
     this.infoServices.getAll()
       .subscribe(
