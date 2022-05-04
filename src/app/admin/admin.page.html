@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar>
     <div style="display:flex; margin: 0 auto; max-width: 730px;">
-      <ion-title>ClimateRight - Admin Control Panel</ion-title>
-      <ion-title style="text-align: end;">
+      <ion-title class="mobile-responsive">ClimateRight - Admin Control Panel</ion-title>
+      <ion-title style="text-align: end;" class="mobile-padding">
         <ion-button color="dark" routerLink="/home" routerDirection="forward">
           <ion-icon name="log-out-outline"></ion-icon>
           &nbsp;
@@ -40,11 +40,11 @@
       </ion-button>
 
        <!-- Delete confirmation view -->
-       
+
       <ion-modal trigger="{{info.id}}">
         <ng-template>
           <ion-content>
-            <div class="container" style="margin: 30px;"> 
+            <div class="container" style="margin: 30px;">
         <h1> Are you sure you want to delete {{info.name}}?</h1>
         <br><br>
         <ion-button color="light" (click)="reloadPage()">

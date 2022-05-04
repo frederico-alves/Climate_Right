@@ -29,7 +29,7 @@
 
 .item {
   height: 36px;
-  width: 114px;
+  width: 117px;
   color: white;
   // padding-left: 5px;
   // padding-right: 5px;
@@ -62,4 +62,19 @@
 
 h3 {
   width: 159px;
+}
+
+
+// RESPONSIVE
+
+/* ============================= */
+/* TABLET PORTRAIT */
+/* ============================= */
+@media only screen and (max-width: 56.25em) {
+
+.column-options {
+  width: 375px;
+  margin-bottom: 67px;
+}
+
 }

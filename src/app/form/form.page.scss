@@ -231,81 +231,9 @@ fieldset {
   margin-bottom: 40px;
 }
 
-// DRAG AND DROP
-.draggable-elements {
+.Gender-Zone {
   display: flex;
   justify-content: center;
-  margin: 2rem;
-}
-
-.droppable-elements {
-  display: flex;
-}
-.draggable {
-  height: 5rem;
-  width: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
-  margin: 0rem 0.5rem;
-  cursor: move;
-  transition: opacity 0.2s;
-}
-.draggable:hover {
-  opacity: 0.5;
-}
-.droppable {
-  height: 6.5rem;
-  width: 6.5rem;
-  margin: 1rem auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  font-size: 4rem;
-  font-weight: bold;
-  background-color: #fff;
-  border: 3px dashed #111;
-  transition: border-width 0.2s, transform 0.2s, background-color 0.4s;
-}
-.droppable span {
-  font-size: 1.25rem;
-  pointer-events: none; /* The element is never the target of pointer events */
-}
-
-/* Drag and Drop Related Styling */
-
-.droppable.droppable-hover {
-  /* background-color: #bee3f0; */
-  border-width: 5px;
-  transform: scale(1.1);
-}
-.droppable.dropped {
-  border-style: solid;
-  color: #fff;
-}
-.droppable.dropped span {
-  font-size: 0.75rem;
-  margin-top: 0.5rem;
-}
-.droppable.dropped i {
-  pointer-events: none;
-}
-.draggable.dragged {
-  user-select: none;
-  opacity: 0.1;
-  cursor: default;
-}
-.draggable.dragged:hover {
-  opacity: 0.1;
-}
-
-.container-dragdrop {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 // RESPONSIVE
@@ -314,90 +242,34 @@ fieldset {
 /* TABLET PORTRAIT */
 /* ============================= */
 @media only screen and (max-width: 56.25em) {
+  .Gender-Zone {
+    display: block;
+    justify-content: center;
+    max-width: 410px;
+    margin: 0 auto;
+  }
+
+  ion-item {
+    width: auto;
+    margin: 20px;
+  }
+
   h2 {
-    padding-top: 25px;
-    padding-bottom: 35px;
+    padding: 0;
+    margin-top: 40px;
+    margin-bottom: 30px;
   }
 
   .radio-bars {
-    width: 775px;
-  }
-}
-
-/* ============================= */
-/* SMALL DESKTOP WINDOW / TABLET SIZE  */
-/* ============================= */
-@media only screen and (max-width: 48.125em) {
-  h2 {
-    text-align: left;
-    padding-left: 95px;
-    margin-top: 0px ;
-    margin-bottom: -30px;
-  }
-
-  .container-group {
-    justify-content: left;
-    margin-left: 30px;
+    width: auto;
+    margin-top: 0px;
   }
 
   .options {
-    width: 350px;
+    width: 300px;
   }
 
-  ion-list {
-    display: unset;
+  .info-section {
+    display: none;
   }
-
-  ion-item {
-    margin: 35px 80px;
-  }
-
-  .center-button {
-    margin-left: 160px;
-  }
-
-  .submit-button {
-    margin-top: 30px;
-  }
-
-}
-
-/* ============================= */
-/* MOBILE WIDTH SIZE             */
-/* ============================= */
-@media only screen and (max-width: 470px) {
-  h2 {
-    // background-color: red;
-    font-size: 20px;
-    padding-left: 80px;
-    margin-top: -20px ;
-    margin-bottom: -50px;
-  }
-
-  .container-group {
-    justify-content: left;
-    margin-left: 30px;
-  }
-
-  .options {
-    width: 240px;
-  }
-
-  ion-list {
-    display: unset;
-  }
-
-  ion-item {
-    margin: 20px 10px;
-    width: 90%;
-  }
-
-  .center-button {
-    margin-left: 110px;
-  }
-
-  .submit-button {
-    margin-top: 30px;
-  }
-
 }
