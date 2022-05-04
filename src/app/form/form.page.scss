@@ -33,8 +33,8 @@ ion-item {
 }
 
 h2 {
-  margin-top: 60px;
-  margin-bottom: 40px;
+  margin-top: 85px;
+  margin-bottom: 75px;
 
   font-size: 30px;
 }
@@ -241,7 +241,7 @@ fieldset {
 /* ============================= */
 /* TABLET PORTRAIT */
 /* ============================= */
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 900px) {
   .Gender-Zone {
     display: block;
     justify-content: center;

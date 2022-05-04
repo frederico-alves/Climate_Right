@@ -73,7 +73,7 @@ p {
 /* ============================= */
 /* SMALL DESKTOP WINDOW / TABLET SIZE  */
 /* ============================= */
-@media only screen and (max-width: 48.125em) {
+@media only screen and (max-width: 900px) {
 
   .logo {
     margin: 10px auto;
@@ -90,11 +90,4 @@ p {
     font-size: 24px;
     width: 91%;
   }
-}
-
-/* ============================= */
-/* MOBILE WIDTH SIZE             */
-/* ============================= */
-@media only screen and (max-width: 470px) {
-
 }
