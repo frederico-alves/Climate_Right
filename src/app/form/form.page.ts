@@ -1,10 +1,8 @@
-import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { ActionSheetController, AlertController, Gesture, GestureController, IonItem, ToastController } from '@ionic/angular';
-import { Button } from 'protractor';
+import { Component, OnInit } from '@angular/core';
+import { AlertController, ToastController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { Information } from '../models/info.models';
 import { InformationService } from '../services/information.service';
-import { CheckboxControlValueAccessor } from '@angular/forms';
 import { Input } from '../models/input.model';
 import { InputService } from '../services/input.service';
 import { Router } from '@angular/router';
@@ -34,7 +32,6 @@ constructor(
   private toastController: ToastController,
   private infoServices: InformationService,
   private inputServices: InputService,
-  private gestureCtrl: GestureController,
   private router: Router) { }
 
   ngOnInit(): void {
@@ -171,6 +168,11 @@ PostDataAPI(){
 
   forwardHomepage(){
     this.router.navigate(['/home']);
+  }
+
+  closeModal(){
+    console.log('clicked!');
+    window.location.reload();
   }
 
   dragdrop(){

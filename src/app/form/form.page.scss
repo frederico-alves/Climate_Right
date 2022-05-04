@@ -14,11 +14,9 @@ ion-radio label {
 }
 
 .ion-icon-info {
-  background-color: #3880ff;
-  color: white;
+  color: #ababab;
   border-radius: 100%;
-  box-shadow: 0 2px 4px -1px rgba(25, 25, 25, 0.2);
-  font-size: 10px;
+  // box-shadow: 2px 0px 11px 0px rgb(25 25 25 / 20%);
 }
 .toast-container {
   background-color: #b11010;
@@ -77,9 +75,6 @@ h2 {
 
 .options {
   background-color: #ff9035;
-  background-image: -webkit-linear-gradient(-370deg, #ff5a5a 0%, #fab44b 30%, #0ef2f4 70%, #0e0ff4 100%);
-  background-image: -webkit-linear-gradient(350deg, #ff5a5a 0%, #fab44b 30%, #0ef2f4 70%, #0e0ff4 100%);
-  background-image: linear-gradient(100deg, #ff5a5a 0%, #fab44b 30%, #0ef2f4 70%, #0e0ff4 100%);
   z-index: 0;
   height: 40px;
   float: none;
@@ -89,6 +84,55 @@ h2 {
   border-radius: 40px;
   display: block;
   box-shadow: 0 2px 4px -1px rgba(25, 25, 25, 0.2);
+}
+
+.options-temperature {
+  // background-image: linear-gradient(100deg, #0e0ff4  0%, #0ef2f4 30%, #fab44b 70%, #ff5a5a 100%);
+  background-image: linear-gradient(
+    350deg,
+    hsl(49deg 100% 69%) 1%,
+    hsl(359deg 100% 51%) 47%,
+    hsl(309deg 100% 33%) 51%,
+    hsl(259deg 100% 15%) 50%,
+    hsl(234deg 93% 22%) 49%,
+    hsl(208deg 86% 29%) 53%,
+    rgb(14, 209, 220) 99%
+  );
+}
+.options-airquality {
+  background-image: linear-gradient(
+    169deg,
+    rgb(14, 1, 62) 1%,
+    hsl(240deg 56% 29%) 49%,
+    hsl(180deg 35% 56%) 51%,
+    hsl(132deg 60% 68%) 49%,
+    hsl(96deg 84% 60%) 51%,
+    hsl(60deg 100% 50%) 99%
+  );
+
+
+}
+.options-humidity {
+  background-image: linear-gradient(
+    169deg,
+    rgb(62, 1, 48) 1%,
+    hsl(320deg 100% 11%) 36%,
+    hsl(325deg 100% 16%) 44%,
+    hsl(331deg 100% 22%) 48%,
+    hsl(337deg 100% 28%) 50%,
+    hsl(343deg 100% 33%) 51%,
+    hsl(348deg 100% 39%) 51%,
+    hsl(354deg 100% 44%) 51%,
+    hsl(0deg 100% 50%) 50%,
+    hsl(352deg 100% 56%) 49%,
+    hsl(343deg 100% 62%) 49%,
+    hsl(335deg 100% 68%) 49%,
+    hsl(326deg 100% 74%) 50%,
+    hsl(318deg 100% 79%) 52%,
+    hsl(309deg 100% 85%) 56%,
+    hsl(301deg 100% 91%) 64%,
+    hsl(292deg 100% 97%) 99%
+  );
 }
 
 fieldset {
@@ -256,6 +300,12 @@ fieldset {
 }
 .draggable.dragged:hover {
   opacity: 0.1;
+}
+
+.container-dragdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // RESPONSIVE

@@ -18,11 +18,7 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
-  },
-  {
-    path: 'dragdrop',
-    loadChildren: () => import('./dragdrop/dragdrop.module').then( m => m.DragdropPageModule)
-  },
+  }
 ];
 
 @NgModule({
