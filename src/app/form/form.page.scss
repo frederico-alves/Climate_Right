@@ -270,6 +270,8 @@ fieldset {
   }
 
   .info-section {
-    display: none;
+    // display: none;
+    transform: scale(0.7);
+    margin-left: -9px;
   }
 }
