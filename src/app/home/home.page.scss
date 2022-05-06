@@ -77,8 +77,8 @@ p {
 
   .logo {
     margin: 10px auto;
-    width: 85%;
-    transform: translateY(80px);
+    width: 100%;
+    transform: translateY(80px) scale(0.85);
   }
 
   .desktop-text {
