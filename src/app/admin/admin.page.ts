@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
 import { Information } from '../models/info.models';;
 import { InformationService } from '../services/information.service';
+import { Hightemperature } from '../models/hightemperature.model';
+import {HightemperatureService} from '../services/hightemperature.service';
 
 @Component({
   selector: 'app-admin',
@@ -11,16 +12,18 @@ import { InformationService } from '../services/information.service';
 export class AdminPage implements OnInit {
 
   infos: Information[];
+  //infoList =[];
+  //info: Information;
 
-  infoList =[];
-  info: Information;
+  highTemps: Hightemperature[];
+
 
   constructor(private infoServices: InformationService,
-     private alertCtrl: AlertController,
-  ) { }
+     private highServices: HightemperatureService,) { }
 
   ngOnInit(): void {
     this.retrieveInformations();
+    this.retrieveHighTemperatureData();
 
   }
 
@@ -76,6 +79,19 @@ export class AdminPage implements OnInit {
         console.log(error);
     });
   }
+
+  retrieveHighTemperatureData(): void {
+    this.highServices.getAll()
+      .subscribe(
+        data => {
+          this.highTemps = data;
+          console.log('DATA ABOUT HIGH TEMPERATURE RECEIVED FROM MYSQL DATABASE:', data);
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
 
   reloadPage(){
     window.location.reload();

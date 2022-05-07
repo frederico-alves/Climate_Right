@@ -12,25 +12,31 @@
     </div>
   </ion-toolbar>
 </ion-header>
+ 
 
 
 <ion-content class="ion-padding">
 
 <div class="container" style="display: flex; justify-content: center;">
   <ion-list style="width: 700px;" >
+
+   
     <h1
       style="
       text-transform: uppercase;
       margin-left: 10px">
         Information Buttons
     </h1>
-    <p style="margin-left: 10px;">Edit description for each information button</p>
+
+   
+    <p style="margin-left: 10px;">Edit or delete description for each information button</p>
     <ion-card *ngFor="let info of infos" style="margin: 30px 10px;">
       <ion-card-header>
         {{info.name}}
       </ion-card-header>
       <ion-card-content>
         {{info.description}}
+        {{info}}
       </ion-card-content>
       <ion-button id="edit{{info.name}}" color="medium">
         <ion-icon name="create">EDIT</ion-icon>
@@ -107,6 +113,27 @@
       </ng-template>
     </ion-modal>
   </ion-list>
+</div>
+
+<div class="container" style="display: flex; justify-content: center;">
+  <ion-list style="width: 700px;" > 
+    <hr style="height: 1px;margin-top: 35px;margin-bottom: 35px;
+    box-sizing: content-box;
+    background: grey">
+    <h1 style="justify-content: left; margin-left: 10px; text-transform: uppercase;" >
+        High temperature
+    </h1>
+    <p style="margin-left: 10px;">Find below the highest temperature registered by time and zone</p>
+    <div > 
+    <ion-card *ngFor="let temp of highTemps" style="margin: 12px 10px; width: 320px;">
+      
+      <ion-card-content>
+       Time:  {{temp.Date}} &nbsp; | &nbsp; Zone:  {{temp.zone}}
+      </ion-card-content>
+   
+    </ion-card>
+  </div>
+</ion-list>
 </div>
 
 </ion-content>
