@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <div style="display:flex; margin: 0 auto; max-width: 730px;">
-      <ion-title class="mobile-responsive">ClimateRight - Admin Control Panel</ion-title>
+      <ion-title class="mobile-responsive">ClimateRight - Dashboard</ion-title>
       <ion-title style="text-align: end;" class="mobile-padding">
         <ion-button class="logoutButton" color="dark" routerLink="/home" routerDirection="forward">
           <ion-icon name="log-out-outline"></ion-icon>
@@ -12,7 +12,7 @@
     </div>
   </ion-toolbar>
 </ion-header>
- 
+
 
 
 <ion-content class="ion-padding">
@@ -20,7 +20,7 @@
 <div class="container" style="display: flex; justify-content: center;">
   <ion-list style="width: 700px;" >
 
-   
+
     <h1
       style="
       text-transform: uppercase;
@@ -28,7 +28,7 @@
         Information Buttons
     </h1>
 
-   
+
     <p style="margin-left: 10px;">Edit or delete description for each information button</p>
     <ion-card *ngFor="let info of infos" style="margin: 30px 10px;">
       <ion-card-header>
@@ -36,10 +36,9 @@
       </ion-card-header>
       <ion-card-content>
         {{info.description}}
-        {{info}}
       </ion-card-content>
-      <ion-button id="edit{{info.name}}" color="medium">
-        <ion-icon name="create">EDIT</ion-icon>
+      <ion-button color="light" id="edit{{info.name}}" style="margin: 12px;">
+        <ion-icon name="create-outline">EDIT</ion-icon>
       </ion-button>
       <ion-button   id="{{info.id}}"  color="danger">
         <ion-icon name="trash">DELETE</ion-icon>
@@ -50,13 +49,20 @@
       <ion-modal trigger="{{info.id}}">
         <ng-template>
           <ion-content>
-            <div class="container" style="margin: 30px;">
+            <div class="container" style="margin: 100px; margin-top: 170px; text-align: center;">
         <h1> Are you sure you want to delete {{info.name}}?</h1>
-        <br><br>
-        <ion-button color="light" (click)="reloadPage()">
+        <br>
+        <ion-button
+          color="light"
+          (click)="reloadPage()"
+          class="margin-right">
+          <ion-icon name="close-circle-outline"></ion-icon>
+          &nbsp;
           Cancel
         </ion-button>
-        <ion-button  (click)="deleteItem(info.id)">
+        <ion-button color="danger"  (click)="deleteItem(info.id)">
+          <ion-icon name="trash">DELETE</ion-icon>
+          &nbsp;
           Yes
         </ion-button>
       </div>
@@ -67,17 +73,25 @@
       <!-- EDIT VIEW -->
       <ion-modal trigger="edit{{info.name}}">
         <ng-template>
+          <ion-header style="padding: 14px 0;">
+            <ion-title>Edit Information</ion-title>
+          </ion-header>
           <ion-content>
             <div class="container" style="margin: 30px;">
-              <input type="text" [(ngModel)]="info.name">
-              <br><br>
-              <textarea [(ngModel)]="info.description" id="data{{info.id}}" cols="55" rows="6"></textarea>
+              <h5>Name</h5>
+              <input class="add-info-input" type="text" [(ngModel)]="info.name">
               <br>
-              <ion-button color="light" (click)="reloadPage()">
-                CANCEL
+              <h5>Description</h5>
+              <p class="html-note">Note: plain HTML can be written and enterpreted by the client side.</p>
+              <textarea class="add-info-input add-info-text" [(ngModel)]="info.description" id="data{{info.id}}" cols="55" rows="6"></textarea>
+              <br>
+              <ion-button class="margin-right" color="light" (click)="reloadPage()">
+                <ion-icon name="close-circle-outline"></ion-icon>
+                &nbsp;CANCEL
               </ion-button>
-              <ion-button (click)="updateItem(info.id, info.name, info.description)">
-                SAVE
+              <ion-button color="dark" (click)="updateItem(info.id, info.name, info.description)">
+                <ion-icon name="checkmark-circle"></ion-icon>
+                &nbsp;SAVE
               </ion-button>
             </div>
           </ion-content>
@@ -87,26 +101,34 @@
     <br>
 
     <!-- ADD INFORMATION BUTTON-->
-    <ion-button id="addinfo" style="margin-left: 10px;">
+    <ion-button color="light" id="addinfo" style="margin-left: 10px;">
+      <ion-icon name="add-circle"></ion-icon>
+      &nbsp;
       ADD INFORMATION
     </ion-button>
     <!-- ADD INFORMATION VIEW -->
     <ion-modal trigger="addinfo">
       <ng-template>
+        <ion-header style="padding: 14px 0;">
+          <ion-title>Add Information</ion-title>
+        </ion-header>
         <ion-content>
           <div class="container" style="margin: 30px;">
-            <p>Name:</p>
-            <input id="newInfoName"type="text" placeholder="Write name here">
+            <h5>Name</h5>
+            <input class="add-info-input" id="newInfoName"type="text" placeholder="Write name here">
             <br>
+            <h5>Description</h5>
+            <p class="html-note">Note: plain HTML can be written and enterpreted by the client side.</p>
+            <textarea class="add-info-input add-info-text" id="newInfoDescription" placeholder="Write description here" cols="55" rows="6"></textarea>
             <br>
-            <p>Description:</p>
-            <textarea id="newInfoDescription" placeholder="Write descripion here" cols="55" rows="6"></textarea>
-            <br>
-            <ion-button color="light" (click)="reloadPage()">
-              CANCEL
+            <ion-button class="margin-right" color="light" (click)="reloadPage()">
+              <ion-icon name="close-circle-outline"></ion-icon>
+              &nbsp;CANCEL
             </ion-button>
-            <ion-button (click)="saveNewInfo()">
-              ADD
+
+            <ion-button color="dark" (click)="saveNewInfo()">
+              <ion-icon name="add-circle"></ion-icon>
+              &nbsp;ADD
             </ion-button>
           </div>
         </ion-content>
@@ -116,21 +138,21 @@
 </div>
 
 <div class="container" style="display: flex; justify-content: center;">
-  <ion-list style="width: 700px;" > 
+  <ion-list style="width: 700px;" >
     <hr style="height: 1px;margin-top: 35px;margin-bottom: 35px;
     box-sizing: content-box;
-    background: grey">
+    background: #c4c4c4">
     <h1 style="justify-content: left; margin-left: 10px; text-transform: uppercase;" >
         High temperature
     </h1>
     <p style="margin-left: 10px;">Find below the highest temperature registered by time and zone</p>
-    <div > 
+    <div >
     <ion-card *ngFor="let temp of highTemps" style="margin: 12px 10px; width: 330px;">
-      
+
       <ion-card-content>
        Time:  {{temp.Date}} &nbsp; | &nbsp; Zone:  {{temp.zone}}
       </ion-card-content>
-   
+
     </ion-card>
   </div>
 </ion-list>

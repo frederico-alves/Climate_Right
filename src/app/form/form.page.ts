@@ -106,21 +106,21 @@ PostDataAPI(){
   async presentAlertSheetTemperature(){
     const alert = await this.alertCtrl.create({
       message:this.infos[0].description,
-      buttons :[{ text :'ok', role :'cancel'}]
+      buttons :[{ text :'OK', cssClass: 'ok-color-black', role :'cancel'}]
     });
     await alert.present();
   }
   async presentAlertSheetAirQuality(){
     const alert = await this.alertCtrl.create({
       message:this.infos[1].description,
-      buttons :[{ text :'ok', role :'cancel'}]
+      buttons :[{ text :'OK', cssClass: 'ok-color-black', role :'cancel'}]
     });
     await alert.present();
   }
   async presentAlertSheetHumidity(){
     const alert = await this.alertCtrl.create({
       message:this.infos[2].description,
-      buttons :[{ text :'ok', role :'cancel'}]
+      buttons :[{ text :'OK', cssClass: 'ok-color-black', role :'cancel'}]
     });
     await alert.present();
   }
