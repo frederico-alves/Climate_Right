@@ -176,18 +176,21 @@
             <div class="zone-image">
               <img src="../../assets/Zones-description-vertical.jpg" alt="Zones description image">
             </div>
-            <ion-button
+            <div class="backbar" style="position:fixed ; right: 0; bottom: 0; ">
+              <ion-button
               color="primary"
               class="submit-button"
               (click)="closeModal()"
               style="
                 position: absolute;
-                right: 0;
-                bottom: -22px;
-                margin-right: 90px;">
+                margin: 10px;
+                bottom: 0;
+                right: 10px">
                 <ion-icon name="arrow-forward-circle"></ion-icon>
                 &nbsp;BACK
-            </ion-button>
+            </ion-button> 
+            </div>
+           
           </div>
         </ion-content>
       </ng-template>
@@ -237,19 +240,22 @@
     </ion-header>
     <ion-content>
       <div class="container-dragdrop" style="margin: 0 30px;">
-        <app-dragdropcomponent></app-dragdropcomponent>
+        <app-dragdropcomponent ></app-dragdropcomponent>
+        <br> <br> <br>
+        <div class="backbar" style="position:fixed ; right: 0; bottom: 0; ">
         <ion-button
           color="primary"
           class="submit-button"
           (click)="closeModal()"
           style="
             position: absolute;
-            right: 0;
-            bottom: -22px;
-            margin-right: 90px;">
+                margin: 10px;
+                bottom: 0;
+                right: 10px;">
             <ion-icon name="arrow-forward-circle"></ion-icon>
             &nbsp;BACK
         </ion-button>
+      </div>
       </div>
     </ion-content>
   </ng-template>
