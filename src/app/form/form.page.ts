@@ -148,7 +148,6 @@ PostDataAPI(){
   async showSubmitErrorToast() {
     const toast = await this.toastController.create({
       header: 'ALL THE FIELDS ARE REQUIRED',
-      message: 'Please select all the fields before submitting.',
       duration: 9000,
       position: 'top',
       cssClass: 'toast-error-class',

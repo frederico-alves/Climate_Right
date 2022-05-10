@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Information } from '../models/info.models';;
 import { InformationService } from '../services/information.service';
 import { Hightemperature } from '../models/hightemperature.model';
-import {HightemperatureService} from '../services/hightemperature.service';
+import { HightemperatureService } from '../services/hightemperature.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-admin',
@@ -18,8 +19,10 @@ export class AdminPage implements OnInit {
   highTemps: Hightemperature[];
 
 
-  constructor(private infoServices: InformationService,
-     private highServices: HightemperatureService,) { }
+  constructor(
+    private infoServices: InformationService,
+    private highServices: HightemperatureService,
+    private toastController: ToastController) { }
 
   ngOnInit(): void {
     this.retrieveInformations();
@@ -52,7 +55,28 @@ export class AdminPage implements OnInit {
       },
       error => {
         console.log(error);
+        this.showAddErrorToast();
     });
+  }
+
+  async showAddErrorToast() {
+    const toast = await this.toastController.create({
+      header: 'ALL THE FIELDS ARE REQUIRED',
+      duration: 9000,
+      position: 'top',
+      cssClass: 'toast-error-class',
+      buttons: [
+       {
+          side: 'end',
+          text: 'Close',
+          role: 'cancel',
+          handler: () => {
+            console.log('');
+          }
+        }
+      ]
+    });
+    await toast.present();
   }
 
   deleteItem(id) {
